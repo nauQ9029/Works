@@ -1,0 +1,15 @@
+<h2>Edit Quiz</h2>
+<form method="POST" action="/quizzes/<%= quiz._id %>?_method=PUT">
+  <div class="mb-3">
+    <label for="title" class="form-label">Quiz Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      value="<%= quiz.title %>"
+      required
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

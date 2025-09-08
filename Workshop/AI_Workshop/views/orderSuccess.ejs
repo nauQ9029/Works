@@ -1,0 +1,23 @@
+<!-- Show success message after placing order -->
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <title>Order Success</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="order-success-container">
+        <h1>Order Successful!</h1>
+        <p>Thank you for your order!</p>
+       <p>Your order ID is: <strong><%= orderId %></strong></p>
+        <p>Product: <%= productName %></p>
+        <p>Quantity: <%= quantity %></p>
+        <p>Total Price: $<%= totalPrice.toFixed(2) %></p>
+        <a href="/products">Back to Products</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Your Company</p>
+    </footer>   
+</body>
+</html>

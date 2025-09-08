@@ -1,0 +1,50 @@
+<<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <script>
+            //create function to check Prime number by arrow function
+            
+            const isPrime = (numInput) => {
+                if (numInput < 2) {
+                    return false;
+                } else {
+                    for (let i = 2; i < numInput; i++) {
+                        if (numInput % i == 0) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+            //create array with below and display numbers are prime
+            let arrNum = [2, 3, 5, 8, 12, 11, 10, 7, 1];
+            for (let i = 0; i < arrNum.length; i++) {
+                if (isPrime(arrNum[i])) {
+                    alert(arrNum[i] + "is Prime number")
+                }
+            }
+
+
+
+        </script>
+    </body>
+
+    </html>

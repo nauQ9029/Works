@@ -1,0 +1,8 @@
+Step 1:
+npm init -y 
+
+step 2
+Create index.js
+
+step 3
+run app

@@ -1,0 +1,9 @@
+<% if (quiz.questions.length === 0) { %>
+<p>No questions found.</p>
+<% } else { %>
+<ul>
+  <% quiz.questions.forEach(q => { %>
+  <li><%= q.text %></li>
+  <% }) %>
+</ul>
+<% } %>

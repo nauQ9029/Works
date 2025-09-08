@@ -1,0 +1,20 @@
+step 1:
+npm init -y
+
+npm i express body-parser
+
+Step 2
+Tạo app.js
+
+step 3
+node app.js
+
+step 4
+Kiểm tra với posman
+url: http://localhost:3000/api/items
+create new item:
+curl -X POST -H "Content-Type: application/json" -d '{"name":"Item 3","description":"Description of Item 3"}' http://localhost:3000/api/items
+update item
+curl -X PUT -H "Content-Type: application/json" -d '{"name":"Updated Item 1","description":"Updated Description"}' http://localhost:3000/api/items/1
+delete item
+curl -X DELETE http://localhost:3000/api/items/1

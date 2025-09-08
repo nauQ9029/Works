@@ -1,0 +1,8 @@
+npm init -y
+npm install express body-parser
+
+step 2 
+create app.js
+
+step 3
+run app.

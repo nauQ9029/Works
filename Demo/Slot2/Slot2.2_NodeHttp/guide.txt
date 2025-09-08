@@ -1,0 +1,8 @@
+Tạo server.js
+step 2
+tạo index.html
+notfound.html 
+post.html
+step 3
+run app: node server.js
+http://localhost:3000/api

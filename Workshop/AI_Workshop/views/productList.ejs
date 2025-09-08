@@ -1,0 +1,35 @@
+<!-- Display list of products with quantity an order form for each -->
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <title>Product List
+    </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <div class="product-list-container">
+        <h1>Product List</h1>
+        <ul class="product-list">
+            <% products.forEach(product => { %>
+                <li class="product-item">
+                    <h2><%= product.name %></h2>
+                    <p>Price: $<%= product.price.toFixed(2) %></p>
+                    <form action="/orders" method="POST">
+                        <input type="hidden" name="productId" value="<%= product.id %>">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" name="quantity" id="quantity" min="1" max="100" required>
+                        <button type="submit">Order Now</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Company</p>
+    </footer>
+</body>
+
+</html>

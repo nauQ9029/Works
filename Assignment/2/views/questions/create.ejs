@@ -1,0 +1,59 @@
+<h2>Create Question</h2>
+<form method="POST" action="/questions">
+  <div class="mb-3">
+    <label class="form-label">Question Text</label>
+    <input type="text" name="text" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Options</label>
+    <!-- Add name="options[]" to all, and client-side filtering using JS or server-side logic -->
+    <input
+      type="text"
+      name="options[]"
+      class="form-control mb-1"
+      placeholder="Option 1"
+      required
+    />
+    <input
+      type="text"
+      name="options[]"
+      class="form-control mb-1"
+      placeholder="Option 2"
+      required
+    />
+    <input
+      type="text"
+      name="options[]"
+      class="form-control mb-1"
+      placeholder="Option 3"
+    />
+    <input
+      type="text"
+      name="options[]"
+      class="form-control mb-1"
+      placeholder="Option 4"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Correct Answer (Index)</label>
+    <select name="correctAnswerIndex" class="form-select" required>
+      <option value="0">Option 1</option>
+      <option value="1">Option 2</option>
+      <option value="2">Option 3</option>
+      <option value="3">Option 4</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Quiz</label>
+    <select name="quizId" class="form-select">
+      <% quizzes.forEach(q => { %>
+      <option value="<%= q._id %>"><%= q.title %></option>
+      <% }) %>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-success">Create</button>
+</form>

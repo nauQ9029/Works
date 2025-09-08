@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-12">
+    <div class="jumbotron bg-primary text-white p-5 rounded mb-4">
+      <h1 class="display-4">Welcome to Question Bank Management System</h1>
+      <p class="lead">Manage your quizzes and questions efficiently with our
+        comprehensive management system.</p>
+      <hr class="my-4" />
+      <p>Get started by creating your first quiz or adding questions to your
+        existing collection.</p>
+      <div class="btn-group" role="group">
+        <a
+          class="btn btn-light btn-lg"
+          href="/quizzes/create"
+          role="button"
+        >
+          <i class="bi bi-plus-circle"></i>
+          Create Quiz
+        </a>
+        <a
+          class="btn btn-outline-light btn-lg"
+          href="/questions/create"
+          role="button"
+        >
+          <i class="bi bi-question-circle"></i>
+          Add Question
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mb-4">
+      <div class="card-header bg-success text-white">
+        <h5 class="card-title mb-0">
+          <i class="bi bi-journal-text"></i>
+          Quiz Management
+        </h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Create, edit, and manage your quizzes. View
+          detailed information about each quiz including associated questions.</p>
+        <div class="d-grid gap-2">
+          <a href="/quizzes" class="btn btn-success">View All Quizzes</a>
+          <a href="/quizzes/create" class="btn btn-outline-success">Create
+            New Quiz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card mb-4">
+      <div class="card-header bg-info text-white">
+        <h5 class="card-title mb-0">
+          <i class="bi bi-question-circle"></i>
+          Question Management
+        </h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Add, edit, and organize your questions. Assign
+          questions to specific quizzes and manage different difficulty levels.</p>
+        <div class="d-grid gap-2">
+          <a href="/questions" class="btn btn-info">View All Questions</a>
+          <a href="/questions/create" class="btn btn-outline-info">Create
+            New Question</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

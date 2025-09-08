@@ -1,0 +1,50 @@
+<h2>Edit Question</h2>
+<form method="POST" action="/questions/<%= question._id %>?_method=PUT">
+  <div class="mb-3">
+    <label class="form-label">Question Text</label>
+    <input
+      type="text"
+      name="text"
+      class="form-control"
+      value="<%= question.text %>"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Options</label>
+    <% for (let i = 0; i < 4; i++) { %>
+      <input
+        type="text"
+        name="options[]"
+        class="form-control mb-1"
+        placeholder="Option <%= i + 1 %>"
+        value="<%= question.options[i] || '' %>"
+      />
+    <% } %>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Correct Answer (Index)</label>
+    <select name="correctAnswerIndex" class="form-select" required>
+      <% for (let i = 0; i < 4; i++) { %>
+        <option value="<%= i %>" <%= i === question.correctAnswerIndex ? 'selected' : '' %>>
+          Option <%= i + 1 %>
+        </option>
+      <% } %>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Quiz</label>
+    <select name="quizId" class="form-select">
+      <% quizzes.forEach(q => { %>
+        <option value="<%= q._id %>" <%= q._id === question.quiz?._id ? 'selected' : '' %>>
+          <%= q.title %>
+        </option>
+      <% }) %>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
