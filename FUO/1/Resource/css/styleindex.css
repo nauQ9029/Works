@@ -1,0 +1,187 @@
+body{
+    border: 3px solid black;
+}
+
+.sec1{
+    margin-bottom: 30px;
+}
+
+.sec1-left{
+    float:left;
+}
+
+.sec1-left img{
+    /* width: 80%; */
+}
+
+.sec1-right{
+    float: right;
+}
+
+.sec1-right ul{
+    margin-left: -15%;
+}
+
+/*.sec1-right ul{
+    margin-left: 25%;
+}*/
+
+.icon-bar{
+    background-color: white;
+}
+
+.buttonn{
+    background-color: green;
+    /* margin-top: 70px; */
+    /* margin-bottom: 10%; */
+}
+
+.header{
+    padding-right: 0;
+    width: 100%;
+}
+
+
+/*----------------*/
+.top9_title{
+    color: #c87542;
+}
+
+.top9_desc{
+    font-size: 27px;
+    width: 100%;
+}
+
+.top9_banner{
+    text-align: center;
+}
+
+.top9_banner img{
+    width: 70%;
+}
+
+.best_f{
+    background-color: #e9feff;
+}
+
+.best_title{
+    color: #c87542;
+    border-bottom: solid #6dcbcf;
+}
+
+.food{
+    margin: 5% 0;
+}
+
+.food img{
+    display: inline-block;
+    border-radius: 100%;
+    height: 128px;
+    width: 128px;
+}
+
+.food h3{
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 6%;
+    font-size: 25px;
+    vertical-align: top;
+    
+}
+
+.rest_title{
+    color: #c87542;
+    text-align: center;
+}
+
+.rest_desc{
+    font-size: 27px;
+}
+
+.rest_img{
+    display: flex;
+    justify-content: center;
+}
+
+.rest_img img{
+    width: 40%;
+}
+
+.party_title{
+    color: #c87542;
+    text-align: center;
+}
+
+.party_desc{
+    font-size: 27px;
+    margin-left: 0.8%
+}
+
+.party_img{
+    display: flex;
+    justify-content: center;
+}
+
+.party_img img{
+    width: 80%
+}
+
+.footer{
+    background-color: #0e9b92;
+    padding: 1%;
+    margin-top: 2%;
+    color: #ffffff;
+    text-align: center;
+}
+
+.sec1-left a{
+    position: relative;
+}
+
+.head-img{
+    position: absolute;
+    max-width: 500%;
+    width: 100vw;
+    height: 200%;
+}
+
+.menuuuu{
+    margin-top: 1%;
+}
+
+.{
+    transform: translate(-100%, 0);
+}
+
+@media only screen and (max-width: 768px){
+
+    /* .sec1{
+        margin-bottom: 0;
+    } */
+
+    .menuuuu{
+        overflow-y: visible !important;
+    }
+
+    .head-img{
+        position: absolute;
+        max-width: 500%;
+        width: 50vw;
+        height: 90%;
+    }
+    
+    .sec1-left {
+        width: 100%;
+    }
+
+    sec1 a{
+        height: 100%;
+    }
+
+    .sec1 .buttonn{
+        height: 100%;
+    }
+
+
+}
+

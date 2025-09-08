@@ -1,0 +1,98 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    text-align: end;
+    margin: 15px 0;
+}
+
+.header-title {
+    width: 30%;
+    color: #ff0003;
+    font-style: italic;
+    text-align: center;
+    padding-top: 50px;
+}
+.header-image {
+    width: 30%;
+    text-align: center;
+}
+
+.header-image img {
+    width: 150px;
+    height: 100px;
+}
+
+.header-searchbar {
+    width: 30%;
+    padding-top: 50px;
+    padding-right: 20px;
+}
+
+.header-searchbar div {
+    margin-left: 10px;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.info-airblade h2{
+    text-align: center;
+    color: #16bebf;
+}
+
+.section1-left img {
+    width: 100%;
+}
+
+.section1-right img {
+    width:60%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.best-seller-title h1 {
+    text-align: center;
+    color: #3cbebc;
+}
+
+.best-seller img {
+    height: 250px;
+    padding-top: 10px;
+}
+
+.section2-middle {
+    padding-left: 90px;
+}
+
+.section2-right {
+    padding-left: 90px;
+}
+
+.best-seller h3 {
+    color: #ffa502;
+}
+
+.section3 h1 {
+    color: #16bebf;
+    text-align: center;
+}
+
+.section3 form {
+    padding-top: 15px;
+}
+
+.section3 img {
+    width: 100%;
+    height: 450px;
+    padding: 20px;
+}
+
+.lefooter {
+    background-color: #0fc0c5;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}

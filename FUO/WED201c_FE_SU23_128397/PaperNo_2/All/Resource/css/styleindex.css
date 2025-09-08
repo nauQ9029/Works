@@ -1,0 +1,147 @@
+/* HEADER */
+.header {
+    display: flex;
+    align-items: end;
+    padding: 15px 0 10px 0;
+}
+
+.header-title {
+    width: 35%;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.header-title h3 {
+    color: #de2a43;
+    font-style: italic;
+}
+
+.header-logo {
+    width: 32%;
+    text-align: center;
+}
+
+.header-logo img {
+    width: 35%;
+    height: 130px;
+    padding: 10px 10px 10px 10px;
+}
+
+.header-searchbar {
+    width: 32%;
+}
+
+.menu {
+    margin-left: -2%;
+    width: 103%;
+}
+.menu ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* SECTION 1 */
+.products-info {
+    padding-bottom: 10px;
+}
+.products-info h1 {
+    color: #0fc0c8;
+    text-align: center;
+    padding: 25px;
+}
+
+.products-info p {
+    font-size: 27px;
+    text-align: justify;
+    padding: 0 5px 0 5px;
+}
+
+/* SECTION 2 */
+.container {
+    width: 100%;
+    max-width: 1300px;
+}
+.products-img {
+    display: flex;
+}
+
+.products-img-left {
+    
+}
+
+.products-img-left img {
+    width: 85%;
+    padding-left: 50px;
+}
+
+.products-img-right img {
+    width: 120%;
+    padding-right: 50px;
+}
+
+/* SECTION 3 */
+.best-seller h1 {
+    color: #0fc0c8;
+    text-align: center;
+
+}
+
+.section3-left {
+    padding-left: 30px;
+}
+
+.text h3 {
+    color: #a35135;
+    font-size: 30px;
+}
+
+.text p {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.section3-right img {
+    width: 80%;
+    height: 400px;
+}
+
+/* SECTION 4 */
+.customer-order {
+    padding-bottom: 10px;
+}
+
+.title h1 {
+    color: #0fc1c5;
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.order {
+    margin-bottom: 30px;
+}
+
+.footer {
+    background-color: #0fc0c8;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 0 5px 0;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding:0;
+    }
+    .header-title, .header-logo, .header-searchbar{
+        width: 100%;
+    }
+    .header img {
+        width: 100px;
+        height: auto;
+    }
+    img {
+        width: 200%;
+    }
+}

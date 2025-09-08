@@ -1,0 +1,127 @@
+.text-header{
+    color: #0ec0c3;
+    font-style: italic;
+}
+
+.text-header h2 {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.logo-header{
+    text-align: center;
+}
+
+.logo-header img {
+    align-content: center;
+}
+
+.searchbox-header {
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.searchbox-header div {
+}
+
+.menu {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.menu ul{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Section 1*/
+.section1-left img{
+    justify-content: left;
+    width: 100%;
+    height: 300px;
+}
+
+.section1 h2 {
+    color: #0ec0c3;
+    text-align: center;
+}
+
+.section1-mid p {
+    font-size: 20px;
+    text-align: justify;
+}
+.section1-right label {
+    font-size: large;
+}
+
+.section1-right input {
+    width: 90%;
+}
+
+.section1-right button {
+    padding: 15px 20px;
+    background-color: #f79646;
+    color: #ffffff;
+}
+
+/* Seciont 2 */
+.section2 h2 {
+    text-align: center;
+    color: #0ec0c3;
+}
+
+.section2 img {
+    width: 100%;
+    height: 300px;
+}
+
+/* Section 3 */
+.section3 {
+    padding: 15px;
+
+}
+
+.section3-left img {
+    width: 108%;
+    height: 300px;
+    margin-left: -15px;
+}
+
+.section3-mid h2  {
+    color: #5b7859;
+    text-align: left;
+}
+
+.section3-mid p {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.section3-right {
+    text-align: center;
+}
+.section3-right h4 {
+    font-size: 20px;
+    margin-top: 50px;
+    color: #f79646;
+}
+
+.book {
+    color: white;
+    background-color: #16a9ca;
+    padding: 10px 10px;
+    font-size: 10px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+    background-color: #0fc0c5;
+    padding: 10px;
+}
+
+.footer h5, .footer p {
+    text-align: center;
+    color: #ffffff;
+}
