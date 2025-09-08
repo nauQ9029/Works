@@ -1,0 +1,120 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* HEADER */
+/* 1 */
+header {
+    background-color: #1b3661;
+    padding-top: 20px;
+}
+
+.logo {
+    color: #fffdfde7;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 30px;
+    padding-left: 100px;
+}
+
+.button {
+    padding-left: 400px;
+}
+
+.btn{   
+    color: #1b3661;
+    background-color: #fffdfde7;
+}
+
+.btn:hover {
+    background-color: #fffdfd54;
+}
+
+/* 2 */
+.nav-links {
+    text-decoration: none;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    padding-bottom: 10px;
+    padding-left: 85px;
+}
+
+.nav-links a {
+    color: #fffdfde7;
+}
+
+
+/* BODY */
+/* 1 */
+.carousel-item img {
+    height: 550px;
+    object-fit: cover;
+}
+
+/* 2 */
+.offers .card img,
+.exploration .card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.offer-card {
+    display: none;
+}
+
+.offer-card.active {
+    display: block;
+}
+
+/* 3 */
+.exploration .card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 4 */
+.willing {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.willing form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.willing label {
+    font-weight: bold;
+}
+
+.willing select, .willing input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.willing button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.willing button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* FOOTER */

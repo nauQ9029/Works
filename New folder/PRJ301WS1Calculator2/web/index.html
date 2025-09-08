@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form name="input" action="CalServlet" method="get">
+            <h1>Calculator</h1>
+            <table>
+                <tr>
+                    <td>First: </td>
+                    <td><input type="number" name="num1"/></td>
+                </tr>
+                <tr>
+                    <td>Second: </td>
+                    <td><input type="number" name="num2"/></td>
+                </tr>
+                <tr>
+                    <td>Operator: </td>
+                    <td>
+                        <select name="operator">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                            <option value="*">*</option>
+                            <option value="/">/</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Result: </td>
+                    <td><input type="text" name="result" disabled/></td>
+                    <!--disabled: ngăn không cho người dùng nhập chỉ hiện ra box-->
+                </tr>
+                <tr>
+                    <td></td><td><input type="submit" value="Compute"/></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

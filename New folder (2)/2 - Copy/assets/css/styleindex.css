@@ -1,0 +1,117 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* HEADER */
+/* 1 */
+header {
+    background-color: #1b3661;
+    padding-top: 20px;
+}
+
+.logo {
+    color: #fffdfde7;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 30px;
+    padding-left: 100px;
+}
+
+.button1 {
+    padding-left: 400px;
+}
+
+.btn {   
+    color: #1b3661;
+    background-color: #fffdfde7;
+}
+
+.btn:hover {
+    background-color: #fffdfd54;
+}
+
+/* 2 */
+.nav-links {
+    text-decoration: none;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    padding-bottom: 10px;
+    padding-left: 85px;
+}
+
+.nav-links a {
+    color: #fffdfde7;
+}
+
+
+/* BODY */
+/* 1 */
+.carousel-item img {
+    height: 350px;
+    object-fit: cover;
+}
+
+/* 2 */
+
+.offers .card img,
+.exploration .card img {
+    height: 150px;
+    object-fit: cover;
+}
+.offer-card {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.offer-card.active {
+    display: block;
+    opacity: 1;
+}
+
+.offers-nav {
+    display: flex;
+    align-items: center;
+}
+
+.offers-nav > li {
+    flex: 1;
+    text-align: center;
+}
+
+.offers-nav > li:first-child,
+.offers-nav > li:last-child {
+    flex: 0;
+}
+
+.btn-link svg {
+    fill: currentColor;
+}
+
+/*
+
+.offer-card {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.offer-card.active {
+    display: block;
+    opacity: 1;
+    width: 500px;
+}
+*/
+
+/* 3 */
+.exploration .card img {
+    height: 200px;
+    object-fit: cover;
+}

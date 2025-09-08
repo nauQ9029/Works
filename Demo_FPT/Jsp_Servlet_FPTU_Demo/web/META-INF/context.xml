@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/Jsp_Servlet_FPTU_Demo">
+  <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" name="jdbc/mydb" password="123" type="javax.sql.DataSource" url="jdbc:sqlserver://DESKTOP-UEDQ7P6\\HOATNTT;databaseName=School;" username="sa"/>
+</Context>
