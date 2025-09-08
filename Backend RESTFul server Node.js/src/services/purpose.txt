@@ -1,0 +1,3 @@
+This file is used to keep logic separate from controllers (request handlers). Services:
+    - Contain core business rules
+    - Handle DB interactions, API calls, or heavy processing

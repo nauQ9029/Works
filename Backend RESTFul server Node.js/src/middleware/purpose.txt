@@ -1,0 +1,5 @@
+This file is used for incapsulate reusable logic for request handling, like:
+    - Authentication
+    - Logging
+    - Validation
+    - Error handling

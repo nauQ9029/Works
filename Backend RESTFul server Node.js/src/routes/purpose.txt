@@ -1,0 +1,1 @@
+This folder is used to defines your application's API endpoints or web routes and connects them to controller logic.

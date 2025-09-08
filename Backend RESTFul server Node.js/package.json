@@ -1,0 +1,33 @@
+{
+  "name": "backend-restful-server-node",
+  "version": "1.0.0",
+  "description": "RESTFul Server with Node.js for beginner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nauQ9029/Backend-RESTFul-with-Node.js-SQL-MongoDB-.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "nauQ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nauQ9029/Backend-RESTFul-with-Node.js-SQL-MongoDB-/issues"
+  },
+  "homepage": "https://github.com/nauQ9029/Backend-RESTFul-with-Node.js-SQL-MongoDB-#readme",
+  "dependencies": {
+    "dotenv": "16.5.0",
+    "ejs": "3.1.10",
+    "express": "5.1.0",
+    "mongoose": "^8.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.10"
+  }
+}

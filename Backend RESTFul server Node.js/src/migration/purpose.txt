@@ -1,0 +1,2 @@
+This folder is for version control for your database.
+Used to create/update/drop tables in a structured and reversible way.
