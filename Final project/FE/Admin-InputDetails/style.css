@@ -1,0 +1,72 @@
+html,
+body {
+    height: 100%;
+}
+
+.container-fluid {
+    height: 100vh;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    /* Đảm bảo card có chiều dài bằng toàn bộ màn hình */
+}
+
+.card-title {
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Để nội dung chính và phần trang trải đều */
+}
+
+.table-responsive {
+    flex-grow: 2;
+    min-height: 400px;
+}
+
+.table td:last-child {
+    color: green;
+    font-weight: bold;
+}
+
+.header {
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header h3 {
+    margin-bottom: 0;
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.underline {
+    border-bottom: 2px solid green;
+    width: 75px;
+}
+
+.section-title {
+    font-weight: bold;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}

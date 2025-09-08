@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/customer/productDetail.jsp</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/admin/DeliveryController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/admin/Orders.jsp</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/customer/HeaderLogin1.jsp</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/admin/SupplierController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/admin/ProductInfo.jsp</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/customer/CheckOut.jsp</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/admin/DeliveryStatusController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/admin/HeadSidebar/SideBar.js</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/dal/ProductDAO.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/dal/OrdersDAO.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/admin/AdDashboardServlet.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/admin/Product.jsp</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/admin/Delivery.jsp</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/ShoppingCartController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/CategoryController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/dal/ReceiptsDAO.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/ProductDetailController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/authController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/HomepageController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/checkOutController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/admin/OrdersController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/admin/UsersController.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/feature/loginGoogle/Constants.java</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/web/customer/Category.jsp</file>
+            <file>file:/E:/All%20Book/FromUniversity/Ki_5/SWP391/FreshFoodStore/src/java/controller/admin/ReceiptsController.java</file>
+        </group>
+        <group name="PRJ301">
+            <file>file:/F:/FA24/FreshFoodStore/src/java/dal/ReceiptsDAO.java</file>
+            <file>file:/F:/FA24/FreshFoodStore/web/admin/Receipts.jsp</file>
+            <file>file:/F:/FA24/FreshFoodStore/src/java/controller/admin/ReceiptsController.java</file>
+        </group>
+    </open-files>
+</project-private>

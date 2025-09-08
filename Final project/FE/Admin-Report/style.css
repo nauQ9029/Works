@@ -1,0 +1,98 @@
+/* Cards */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    min-height: 330px;
+}
+
+.card-title {
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.card-content p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-value {
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+.card-content {
+    text-align: center;
+}
+
+/* Best selling category Table */
+.table {
+    width: 100%;
+}
+
+.table th, .table td {
+    text-align: left;
+    font-size: 1rem;
+}
+
+.table tbody td:last-child {
+    color: #10a760;
+}
+
+/* Charts */
+.card.chart-card canvas {
+    flex: 1;
+    max-height: 85%;
+    height: 400px;
+    width: 100%;
+}
+
+/* Best selling product */
+.btn {
+    padding: 0 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    text-decoration: none;
+}
+
+/* Media Queries for responsiveness */
+
+/* For small devices (mobiles, up to 576px) */
+@media (max-width: 576px) {
+    .card {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-value {
+        font-size: 18px;
+    }
+
+    .table th, .table td {
+        font-size: 0.9rem;
+    }
+
+    .chart-card canvas {
+        height: 300px;
+    }
+
+    .card-item {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

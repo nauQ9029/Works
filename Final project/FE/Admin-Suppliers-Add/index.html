@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suppliers Adding</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- CSS for header and sidebar-->
+    <link rel="stylesheet" href="headerNSidebar.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scale-container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 bg-light">
+            <!-- Sidebar -->
+            <div id="sidebar"></div>
+          </div>
+          <div class="col-md-10 bg-light">
+            <!-- Header -->
+            <div id="header"></div>
+            <!-- Main Content -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                      <h3 class="card-title mb-4">Nhà phân phối</h3>
+                      <div
+                        class="d-grid gap-2 d-md-flex justify-content-md-end"
+                      >
+                        <button class="btn btn-success mb-4">Tạo mới</button>
+                        <button class="btn btn-light mb-4">Chỉnh sửa</button>
+                        <button class="btn btn-outline-secondary mb-4">
+                          Bộ lọc
+                        </button>
+                        <button class="btn btn-outline-secondary mb-4">
+                          Tải xuống tất cả
+                        </button>
+                      </div>
+                    </div>
+                    <!-- Supplier Data Table -->
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Tên nhà phân phối</th>
+                            <th scope="col">Sản phẩm</th>
+                            <th scope="col">SĐT</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Loại</th>
+                            <th scope="col">Đang giao</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Static Supplier Data -->
+
+                          <!--  -->
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- Pagination Section -->
+                    <div
+                      class="d-flex justify-content-between align-items-center mt-3"
+                    >
+                      <button class="btn btn-outline-secondary" id="prevBtn">
+                        Trước
+                      </button>
+                      <span id="pageInfo">Trang 1 của 10</span>
+                      <button class="btn btn-outline-secondary" id="nextBtn">
+                        Sau
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal HTML (New Supplier Form) -->
+      <!-- Create new suppliers -->
+      <div
+        class="modal fade"
+        id="newSupplierModal"
+        tabindex="-1"
+        aria-labelledby="newSupplierModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newSupplierModalLabel">
+                Tạo nhà phân phối mới
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="newSupplierForm">
+                <div class="row mb-3">
+                  <label for="supplierName" class="col-sm-4 col-form-label"
+                    >Tên</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="supplierName"
+                      placeholder="Nhập tên"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="supplierEmail" class="col-sm-4 col-form-label"
+                    >Email</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="supplierEmail"
+                      placeholder="Nhập email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="supplierAddress" class="col-sm-4 col-form-label"
+                    >Địa chỉ</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="supplierAddress"
+                      placeholder="Địa chỉ"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="supplierContact" class="col-sm-4 col-form-label"
+                    >SĐT</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="supplierContact"
+                      placeholder="Nhập SĐT"
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Hủy
+              </button>
+              <button
+                type="submit"
+                class="btn btn-success"
+                form="newSupplierForm"
+              >
+                Xác nhận
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit suppliers -->
+      <div
+        class="modal fade"
+        id="editSupplierModal"
+        tabindex="-1"
+        aria-labelledby="editSupplierModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editSupplierModalLabel">
+                Chỉnh sửa nhà phân phối
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="editSupplierForm">
+                <div class="row mb-3">
+                  <label for="supplierName" class="col-sm-4 col-form-label"
+                    >Tên</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="supplierName"
+                      placeholder="Nhập tên"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="supplierEmail" class="col-sm-4 col-form-label"
+                    >Email</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="supplierEmail"
+                      placeholder="Nhập email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="supplierAddress" class="col-sm-4 col-form-label"
+                    >Địa chỉ</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="supplierAddress"
+                      placeholder="Địa chỉ"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="supplierContact" class="col-sm-4 col-form-label"
+                    >SĐT</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="supplierContact"
+                      placeholder="Nhập SĐT"
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Hủy
+              </button>
+              <button
+                type="submit"
+                class="btn btn-success"
+                form="editSupplierForm"
+              >
+                Xác nhận
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</html>

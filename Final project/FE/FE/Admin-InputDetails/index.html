@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- CSS for header and sidebar-->
+    <link rel="stylesheet" href="headerNSidebar.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scale-container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 bg-light">
+            <!-- Sidebar -->
+            <div id="sidebar"></div>
+          </div>
+          <div class="col-md-10 bg-light">
+            <!-- Header -->
+            <div id="header"></div>
+
+            <!-- Main Content -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                      <h3 class="card-title mb-4">Maggi</h3>
+                      <div
+                        class="d-grid gap-2 d-md-flex justify-content-md-end"
+                      >
+                        <button class="btn btn-outline-secondary mb-4">
+                          Chỉnh sửa
+                        </button>
+                        <button class="btn btn-outline-secondary mb-4">
+                          Tải xuống
+                        </button>
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <p class="underline">Overview</p>
+                    </div>
+
+                    <div class="mb-4">
+                      <p class="section-title">Thông kê đơn nhập</p>
+                      <p>Giá trị đơn nhập: <strong>2.000.000vnd</strong></p>
+                      <p>Số lượng mặt hàng: <strong>5</strong></p>
+                    </div>
+
+                    <div class="mb-4">
+                      <p class="section-title">Các sản phẩm nhập vào</p>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Sản phẩm</th>
+                            <th>Giá nhập</th>
+                            <th>Ngày hết hạn</th>
+                            <th>Số lượng nhập</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Thịt heo ba chỉ</td>
+                            <td>₹430</td>
+                            <td>11/12/24</td>
+                            <td>15</td>
+                          </tr>
+                          <tr>
+                            <td>Rau cải xanh</td>
+                            <td>₹257</td>
+                            <td>21/12/24</td>
+                            <td>19</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mb-4">
+                      <p class="section-title">Thông tin nhà cung cấp</p>
+                      <p>Tên nhà cung cấp: <strong>Ronald Martin</strong></p>
+                      <p>Số điện thoại liên hệ: <strong>98789 86757</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</html>

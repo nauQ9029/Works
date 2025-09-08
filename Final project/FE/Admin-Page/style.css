@@ -1,0 +1,252 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    max-width: 100%;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    /* Sử dụng đơn vị rem để linh hoạt */
+    font-weight: bold;
+    color: #2b2b2b;
+}
+
+.sidebar h2 img {
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu-item {
+    display: flex;
+    padding: 10px 0;
+    color: #4f4f4f;
+    font-size: 1rem;
+    /* Đơn vị rem để linh hoạt */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+
+.menu-item.active {
+    color: #27ae60;
+}
+
+.menu-item .icon {
+    font-size: 1.25rem;
+    /* Icon cũng dùng đơn vị tương đối */
+    margin-right: 15px;
+
+}
+
+.logo {
+    font-size: 2rem;
+    /* Icon cũng dùng đơn vị tương đối */
+    margin-right: 15px;
+}
+
+.menu-item.active .icon {
+    color: #27ae60;
+}
+
+.menu-item:hover {
+    color: #27ae60;
+    cursor: pointer;
+}
+
+.menu-item:hover .icon {
+    color: #27ae60;
+}
+
+.sidebar .menu-section {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-section {
+    margin-top: auto;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-footer {
+    background-color: #f7f7f7;
+    height: 100px;
+}
+
+
+.header {
+    border-bottom: 2px solid #EEEEEE;
+    width: 100%;
+    /* Đảm bảo header chiếm toàn bộ chiều rộng */
+}
+
+.search-bar {
+    width: 400px;
+    position: relative;
+    /* Để định vị icon bên trong */
+    margin-right: 15px;
+    /* Khoảng cách giữa search bar và icon */
+}
+
+input.form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    /* Đảm bảo input chiếm toàn bộ chiều rộng của search bar */
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-45%);
+    color: #000000;
+    font-size: 18px;
+}
+
+/* Main */
+
+/* 4 Cards (Sale, Inventory, Purchase, Product) */
+.card-title {
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.card-content p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Thêm dấu gạch ngăn cách giữa các cột của card */
+.card-item:not(:last-child) {
+    border-right: 1px solid #e0e0e0;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card-value {
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+.card-content {
+    text-align: center;
+}
+
+/* Màu cho icons */
+.icon-sales {
+    color: #4CAF50;
+}
+.icon-revenue {
+    color: #FFC107;
+}
+.icon-profit {
+    color: #FF5722;
+}
+.icon-cost {
+    color: #00BCD4;
+}
+.icon-purchase {
+    color: #009688;
+}
+.icon-cancel {
+    color: #E91E63;
+}
+.icon-return {
+    color: #FF9800;
+}
+.icon-inventory {
+    color: #3F51B5;
+}
+.icon-suppliers {
+    color: #03A9F4;
+}
+.icon-categories {
+    color: #9C27B0;
+}
+.icon-received {
+    color: #1a3f5c;
+}
+
+/* Charts & Data */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #ffffff;
+}
+
+/* Stock Information */
+.table {
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    font-size: 15px;
+    padding: 20px;
+}
+
+/* Low Quantity Stock */
+.list-group-item {
+    border: none;
+    border-radius: 10px;
+    padding: 33px;
+}
+
+.list-group-item .badge {
+    font-size: 14px;
+    padding: 5px 5px;
+}
+
+/* Responsive ----- UNDONE*/
+/* Cards */
+@media (max-width: 768px) {
+
+    .col-md-8,
+    .col-md-4 {
+        flex: 1 0 100%;
+        margin-bottom: 20px;
+    }
+}
+/* Stock */
+@media (max-width: 768px) {
+    .table, .list-group {
+        margin-bottom: 20px;
+    }
+}
