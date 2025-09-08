@@ -1,0 +1,97 @@
+/* Slot 6 - Lab 1 Render to web
+.App {
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2 {
+  color: #2c3e50;
+}
+
+.emp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.emp-table th,
+.emp-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.emp-table th {
+  background-color: #f4f4f4;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+p {
+  font-weight: bold;
+} */
+
+/* Slot 4 - Message */
+
+/* .message {
+  margin-bottom: 10px;
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+}
+.message input {
+  width: 80%;
+  margin-right: 5px;
+} */
+
+/* Slot 8 - Login with useContext */
+/* App.css */
+
+/* body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.app-background {
+  background: url("../public/images/S020_HUD_BG_pedrofleming.jpg") no-repeat
+    center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  min-width: 350px;
+  max-width: 400px;
+} */
+
+/* Lab 5 - Expense Tracker  */
+.custom-green-btn {
+  background-color: #8ba888;
+  border-color: #8ba888;
+  color: white;
+}
+
+.custom-green-btn:hover,
+.custom-green-btn:focus {
+  background-color: #315239;
+  border-color: #315239;
+  color: white;
+}

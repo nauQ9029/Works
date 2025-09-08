@@ -1,0 +1,59 @@
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: #fff8f8;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+.category-filter::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.category-btn {
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.category-btn.active {
+  background-color: #f74463;
+  color: white;
+  font-weight: 500;
+}
+
+/* Tablet: tự động xuống hàng */
+@media (max-width: 768px) {
+  .category-filter {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .category-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
+
+/* Mobile: cuộn ngang */
+@media (max-width: 480px) {
+  .category-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .category-btn {
+    flex: 0 0 auto;
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}

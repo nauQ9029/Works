@@ -1,0 +1,60 @@
+
+.manage-services h2 {
+    text-align: center;
+    color: #f43f5e;
+    margin-bottom: 30px;
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-top: 1px solid #fbd5d5;
+}
+.wrap-div {
+    display: flex;
+    justify-content: space-between;
+}
+.pink{
+    color: #f43f5e;
+}
+
+.actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+    background-color: #f43f5e;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #d72c4d;
+}
+
+.delete-btn {
+    background-color: #ffe4e6;
+    color: #f43f5e;
+}
+
+.delete-btn:hover {
+    background-color: #fecdd3;
+}
+
+.add-btn {
+    margin-bottom: 40px;
+    padding: 10px 20px;
+}
+
+.service-info .location {
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

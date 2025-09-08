@@ -1,0 +1,16 @@
+.user-inf button {
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+}
+
+
+.btn-pink {
+  background-color: #F43F5E;
+  color: white;
+}
+
+.btn-pink:hover {
+  background-color: #F43F5E;
+  color: white;
+}

@@ -1,0 +1,56 @@
+
+/* --------------category section--------------- */
+
+.category-section {
+  background-color: #f9fafb;
+  padding: 60px 0;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.category-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 75%;
+  position: relative;
+}
+
+
+.category-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: transform 0.3s ease;
+}
+
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.category-card:hover .category-img {
+  transform: scale(1.05);
+}
+
+.card-title, .card-text {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+

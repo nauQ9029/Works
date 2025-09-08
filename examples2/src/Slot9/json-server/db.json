@@ -1,0 +1,266 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "text": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Berlin",
+        "Rome"
+      ],
+      "correctAnswer": "Paris",
+      "selectedOption": null
+    },
+    {
+      "id": "2",
+      "text": "Who developed the theory of relativity?",
+      "options": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Galileo Galilei",
+        "Nikola Tesla"
+      ],
+      "correctAnswer": "Albert Einstein",
+      "selectedOption": null
+    },
+    {
+      "id": "3",
+      "text": "What is the symbol for iron on the periodic table?",
+      "options": [
+        "Fe",
+        "I",
+        "Au",
+        "Ag"
+      ],
+      "correctAnswer": "Fe",
+      "selectedOption": null
+    }
+  ],
+  "Videos": [
+    {
+      "id": "1",
+      "title": "React Tutorial for Beginners",
+      "description": "This is the first video",
+      "url": "https://www.youtube.com/embed/SqcY0GlETPk?si=Uh6d9BmNwizQ7lh-",
+      "duration": "5:30",
+      "image": "https://example.com/video1.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "text": "Great video!",
+          "user": "User1"
+        },
+        {
+          "id": 2,
+          "text": "Thanks for sharing!",
+          "user": "User2"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "React JS Full Course 2023 | Build an App and Master React in 1 Hour",
+      "description": "This is the second video",
+      "url": "https://www.youtube.com/embed/b9eMGE7QtTk?si=u6DOYlRIMf3XW-3j",
+      "duration": "3:45",
+      "image": "https://example.com/video2.jpg",
+      "comments": [
+        {
+          "id": 3,
+          "text": "Good content!",
+          "user": "User3"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "React JS Full Course for Beginners | Complete All-in-One Tutorial | 9 Hours",
+      "description": "This is the third video",
+      "url": "https://www.youtube.com/embed/RVFAyFWO4go?si=4c63xf2lgNdoEN9p",
+      "duration": "8:12",
+      "image": "https://example.com/video3.jpg",
+      "comments": []
+    }
+  ],
+  "Cars": [
+    {
+      "id": "1",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2022,
+      "price": 20000,
+      "image": "/img/Corolla.jpg"
+    },
+    {
+      "id": "2",
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2021,
+      "price": 22000,
+      "image": "/img/honda.jpg"
+    },
+    {
+      "id": "3",
+      "make": "Ford",
+      "model": "Mustang",
+      "year": 2023,
+      "price": 35000,
+      "image": "/img/ford.jpg"
+    },
+    {
+      "id": "4",
+      "make": "BMW",
+      "model": "X5",
+      "year": 2020,
+      "price": 45000,
+      "image": "/img/bmw.jpg"
+    }
+  ],
+  "Companies": [
+    {
+      "id": "2",
+      "name": "Company Two",
+      "category": "Retail",
+      "start": 1992,
+      "end": 2008
+    },
+    {
+      "id": "5",
+      "name": "Company Five",
+      "category": "Technology",
+      "start": 2009,
+      "end": 2014
+    },
+    {
+      "id": "6",
+      "name": "Company Six",
+      "category": "Finance",
+      "start": 1987,
+      "end": 2010
+    },
+    {
+      "id": "7",
+      "name": "Company Seven",
+      "category": "Auto",
+      "start": 1986,
+      "end": 1996
+    },
+    {
+      "id": "8",
+      "name": "Company Eight",
+      "category": "Auto",
+      "start": 1986,
+      "end": 1996
+    },
+    {
+      "id": "9",
+      "name": "Company Nine",
+      "category": "Retail",
+      "start": 1981,
+      "end": 1989
+    }
+  ],
+  "jobs": [
+    {
+      "jobId": "101",
+      "title": "Frontend Developer",
+      "company": "Innovative Web Solutions",
+      "location": "San Francisco, CA",
+      "description": "Develop user-friendly web applications using modern frameworks.",
+      "requirements": [
+        "Experience with React or Angular",
+        "Proficiency in JavaScript, HTML, and CSS",
+        "Familiarity with RESTful APIs"
+      ],
+      "salary": {
+        "currency": "USD",
+        "amount": 85000
+      },
+      "employmentType": "Full-Time",
+      "postedDate": "2024-10-12",
+      "applicationDeadline": "2024-11-15",
+      "id": "1f14"
+    },
+    {
+      "jobId": "102",
+      "title": "Backend Developer",
+      "company": "DataCorp",
+      "location": "Remote",
+      "description": "Design and maintain backend systems and services.",
+      "requirements": [
+        "Experience with Node.js or Python",
+        "Knowledge of SQL and NoSQL databases",
+        "Familiarity with cloud services (AWS, Azure)"
+      ],
+      "salary": {
+        "currency": "USD",
+        "amount": 95000
+      },
+      "employmentType": "Full-Time",
+      "postedDate": "2024-10-10",
+      "applicationDeadline": "2024-12-01",
+      "id": "bbcb"
+    },
+    {
+      "jobId": "103",
+      "title": "Mobile App Developer",
+      "company": "AppGenie",
+      "location": "Austin, TX",
+      "description": "Develop cross-platform mobile applications using Flutter.",
+      "requirements": [
+        "Experience in mobile app development",
+        "Proficiency in Flutter and Dart",
+        "Familiarity with REST APIs and third-party libraries"
+      ],
+      "salary": {
+        "currency": "USD",
+        "amount": 78000
+      },
+      "employmentType": "Full-Time",
+      "postedDate": "2024-09-30",
+      "applicationDeadline": "2024-11-01",
+      "id": "86e6"
+    },
+    {
+      "jobId": "104",
+      "title": "Data Scientist",
+      "company": "AI Insights",
+      "location": "New York, NY",
+      "description": "Analyze and interpret complex data to drive business decisions.",
+      "requirements": [
+        "Strong background in data analysis and statistics",
+        "Experience with Python or R",
+        "Knowledge of machine learning algorithms and tools"
+      ],
+      "salary": {
+        "currency": "USD",
+        "amount": 120000
+      },
+      "employmentType": "Full-Time",
+      "postedDate": "2024-09-25",
+      "applicationDeadline": "2024-10-30",
+      "id": "e21e"
+    },
+    {
+      "jobId": "105",
+      "title": "UX/UI Designer",
+      "company": "Creative Designs Studio",
+      "location": "Los Angeles, CA",
+      "description": "Design user interfaces and enhance user experiences for digital products.",
+      "requirements": [
+        "Proficiency in design tools like Figma, Sketch, or Adobe XD",
+        "Strong portfolio of previous UI/UX design work",
+        "Experience in creating wireframes, prototypes, and high-fidelity designs"
+      ],
+      "salary": {
+        "currency": "USD",
+        "amount": 70000
+      },
+      "employmentType": "Full-Time",
+      "postedDate": "2024-10-05",
+      "applicationDeadline": "2024-11-10",
+      "id": "a185"
+    }
+  ]
+}

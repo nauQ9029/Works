@@ -1,0 +1,14 @@
+body {
+  background: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.layout {
+  min-height: 100vh;
+}
+
+.expense-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}

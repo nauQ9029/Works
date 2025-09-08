@@ -1,0 +1,41 @@
+
+/* ----------------Feature Section------------- */
+
+
+.feature-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; /* Tỉ lệ 4:3 */
+  overflow: hidden;
+}
+
+.feature-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;       /* Giới hạn 2 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 3em;             /* Đảm bảo chiều cao cố định (tùy theo line-height) */
+  margin-bottom: 8px;          /* Khoảng cách với phần dưới */
+}
+
+

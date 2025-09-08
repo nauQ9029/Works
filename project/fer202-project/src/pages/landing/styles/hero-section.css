@@ -1,0 +1,78 @@
+.hero-section {
+  position: relative;
+  height: 600px;
+  background-image: url('../../../assets/banner-image.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: sans-serif;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.banner-btn {
+  padding: 12px 24px !important;
+  font-size: 16px;
+  border-radius: 50px !important;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.primary {
+  background-color: #F43F5E; 
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #F43F5E;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn.secondary:hover {
+  background-color: white;
+  color: black;
+}
+

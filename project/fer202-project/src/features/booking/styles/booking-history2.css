@@ -1,0 +1,119 @@
+/* .booking-history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.booking-card {
+  border: 1px solid #58a04b;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #c1e1c1;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.booking-header > div {
+  flex: 1;
+  text-align: center;
+}
+
+.booking-products {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.product-item {
+  display: grid;
+  grid-template-columns: 60px auto 80px 80px;
+  gap: 1rem;
+  align-items: center;
+}
+
+.product-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.product-price,
+.product-quantity,
+.product-amount {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.booking-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  gap: 0.5rem;
+}
+
+.booking-info div {
+  margin-bottom: 0.3rem;
+}
+
+.total-price {
+  font-weight: bold;
+  color: #2aa952;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.pay-again-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  background-color: #58a04b;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  float: right;
+  box-shadow: 0 2px 4px rgba(88, 160, 75, 0.4);
+  transition: background 0.3s ease;
+}
+
+.pay-again-btn:hover {
+  background-color: #3f8432;
+}
+
+.text-green {
+  color: #2aa952;
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #d9e9d9;
+  margin: 1rem 0;
+} */

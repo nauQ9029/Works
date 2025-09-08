@@ -1,0 +1,62 @@
+/* App.css */
+
+/* Styling the main App container */
+.App {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Styling the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling table headers */
+th {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Styling table rows */
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Styling the images inside the table */
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* Adding a hover effect on table rows */
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Checkbox styling for featured students */
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+/* Make the table responsive */
+@media screen and (max-width: 600px) {
+  table {
+    width: 100%;
+  }
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}

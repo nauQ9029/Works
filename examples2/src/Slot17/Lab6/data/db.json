@@ -1,0 +1,56 @@
+{
+  "petCenter": {
+    "centerName": "Happy Paws Center",
+    "location": "123 Pet Street, Animal City",
+    "pets": [
+      {
+        "id": "1",
+        "name": "Bella",
+        "img": "/images/cute-happy-pup.jpg",
+        "type": "Dog",
+        "adoptionFee": 120.0,
+        "age": "2 years"
+      },
+      {
+        "id": "2",
+        "name": "Milo",
+        "img": "/images/images.jpg",
+        "type": "Cat",
+        "adoptionFee": 90.0,
+        "age": "1 year"
+      },
+      {
+        "id": "3",
+        "name": "Luna",
+        "img": "/images/images (1).jpg",
+        "type": "Rabbit",
+        "adoptionFee": 60.0,
+        "age": "6 months"
+      },
+      {
+        "id": "4",
+        "name": "Bella",
+        "img": "/images/cute-happy-pup.jpg",
+        "type": "Dog",
+        "adoptionFee": 140.0,
+        "age": "2 years"
+      },
+      {
+        "id": "5",
+        "name": "Milo",
+        "img": "/images/images.jpg",
+        "type": "Cat",
+        "adoptionFee": 30.0,
+        "age": "1 year"
+      },
+      {
+        "id": "6",
+        "name": "Luna",
+        "img": "/images/images (1).jpg",
+        "type": "Rabbit",
+        "adoptionFee": 20.0,
+        "age": "6 months"
+      }
+    ]
+  }
+}

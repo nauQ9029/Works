@@ -1,0 +1,144 @@
+.footer {
+    background-color: #111827;
+    color: #9ca3af;
+    padding: 60px 40px;
+    font-family: sans-serif;
+  }
+
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; 
+    gap: 40px;
+  }
+
+  
+  
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .logo-text span {
+    color: #ef476f;
+  }
+  .desc {
+    margin: 15px 0;
+    line-height: 1.6;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .social-icons i {
+    font-size: 20px;
+    color: #9ca3af;
+    cursor: pointer;
+  }
+  .social-icons i:hover {
+    color: #fff;
+  }
+  
+  .footer-column h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-column li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  .footer-column li:hover {
+    color: #fff;
+  }
+  .newsletter {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 18px;
+  }
+  
+  .newsletter h3 {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  
+  .newsletter p {
+    font-size: 14px;
+    color: #9ca3af;
+    margin: 0;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    border-radius: 9999px;
+    overflow: hidden;
+    background-color: #1f2937; /* darker background like the image */
+  }
+  
+  .newsletter-form input[type="email"] {
+    background-color: transparent;
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    outline: none;
+    width: 250px;
+  }
+  
+  .newsletter-form input::placeholder {
+    color: #9ca3af;
+  }
+  
+  .newsletter-form button {
+    background-color: #ef476f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #d13e61;
+  }
+  
+  
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    border-top: 1px solid #374151;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+  }
+  .footer-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+  }
+  .footer-links a:hover {
+    color: white;
+  }
+  

@@ -1,0 +1,145 @@
+.service-card {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #555;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-info h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.rating {
+  font-size: 0.85rem;
+  color: #ffb400;
+  margin-bottom: 12px;
+}
+
+.availability {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.bottom-row {
+  margin-top: auto;
+}
+
+.price {
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.per-event {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.btn-book {
+  background-color: #ff4b5c;
+  border: none;
+  color: white;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.learn-more {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  display: block;
+  text-align: center;
+}
+
+.title-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.title-price-row h4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Số dòng tối đa */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #313030;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    line-height: 1.5;
+}
+
+.price-group {
+  text-align: right;
+}
+
+.price-group .price {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.price-group .per-event {
+  display: block;
+  font-size: 0.75rem;
+  color: #777;
+}

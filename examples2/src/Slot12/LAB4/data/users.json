@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Nguyen",
+    "email": "alice@example.com",
+    "posts": [
+      { "id": "p1", "title": "Intro to React", "content": "React is awesome!" },
+      { "id": "p2", "title": "Advanced Routing", "content": "Let’s master React Router!" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Bob Tran",
+    "email": "bob@example.com",
+    "posts": [
+      { "id": "p3", "title": "Hello World", "content": "My first blog." }
+    ]
+  }
+]
