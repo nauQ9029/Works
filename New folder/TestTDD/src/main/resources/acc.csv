@@ -1,0 +1,6 @@
+username,password,expected
+admin,12345,true
+admin,null,false
+null,12345,false
+null,null,false
+a,a,false

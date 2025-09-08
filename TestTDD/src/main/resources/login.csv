@@ -1,0 +1,8 @@
+user, pass
+admin, 12345
+admin, null
+null, admin
+null, null
+admin, 67890
+user, 12345
+admin, 123456

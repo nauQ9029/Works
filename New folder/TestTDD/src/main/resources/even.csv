@@ -1,0 +1,6 @@
+Test function isEven
+3, false
+4, true
+-15, false
+-10, true
+0, true

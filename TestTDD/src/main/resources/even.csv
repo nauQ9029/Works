@@ -1,0 +1,4 @@
+input, expected
+2, true
+0, true
+1, false
