@@ -1,0 +1,289 @@
+{
+  "accounts": [
+    {
+      "accountId": "ACC67890",
+      "accountHolder": {
+        "firstName": "UpdatedFirstName",
+        "lastName": "UpdatedLastName",
+        "dateOfBirth": "1985-06-15",
+        "address": {
+          "street": "456 Elm St",
+          "city": "Townsville",
+          "state": "Stateville",
+          "zipcode": "67890"
+        },
+        "contact": {
+          "email": "john.doe@example.com",
+          "phone": "+1234567890"
+        }
+      },
+      "id": "053a"
+    },
+    {
+      "accountId": "ACC67891",
+      "accountHolder": {
+        "firstName": "UpdatedFirstName",
+        "lastName": "UpdatedLastName",
+        "dateOfBirth": "1990-08-25",
+        "address": {
+          "street": "789 Maple St",
+          "city": "Villageville",
+          "state": "Stateville",
+          "zipcode": "34567"
+        },
+        "contact": {
+          "email": "jane.smith@example.com",
+          "phone": "+0987654321"
+        }
+      },
+      "id": "5912"
+    },
+    {
+      "id": "0fb8",
+      "accountId": "ACC86978",
+      "accountHolder": {
+        "firstName": "UpdatedFirstName",
+        "lastName": "UpdatedLastName",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "6a6c",
+      "accountId": "ACC87287",
+      "accountHolder": {
+        "firstName": "UpdatedFirstName",
+        "lastName": "UpdatedFirstName",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "3acd",
+      "accountId": "ACC965",
+      "accountHolder": {
+        "firstName": "UpdatedFirstName",
+        "lastName": "UpdatedLastName",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "71e0",
+      "accountId": "ACC90200",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "6413",
+      "accountId": "ACC1985",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "08b5",
+      "accountId": "ACC50112",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "56ac",
+      "accountId": "ACC71082",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "f06d",
+      "accountId": "ACC55950",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "0550",
+      "accountId": "ACC36913",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "cfc9",
+      "accountId": "ACC66079",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "f2f0",
+      "accountId": "ACC24822",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "9c22",
+      "accountId": "ACC12048",
+      "accountHolder": {
+        "firstName": "UpdatedFirstName",
+        "lastName": "UpdatedLastName",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    },
+    {
+      "id": "ca23",
+      "accountId": "ACC86768",
+      "accountHolder": {
+        "firstName": "New",
+        "lastName": "Account",
+        "dateOfBirth": "2000-01-01",
+        "address": {
+          "street": "123 New St",
+          "city": "Newville",
+          "state": "NewState",
+          "zipcode": "12345"
+        },
+        "contact": {
+          "email": "new.account@example.com",
+          "phone": "+1122334455"
+        }
+      }
+    }
+  ]
+}

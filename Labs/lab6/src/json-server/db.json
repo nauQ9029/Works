@@ -1,0 +1,43 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "question": "Inside which HTML element do we put the JavaScript?",
+        "options": ["<javascript>", "<scripting>", "<script>", "<js>"],
+        "correctAnswer": "<script>"
+      },
+      {
+        "id": 2,
+        "question": "What are variables used for in JavaScript Programs?",
+        "options": [
+          "Storing numbers, dates, or other values",
+          "Varying randomly",
+          "Causing high-school algebra flashbacks",
+          "None of these"
+        ],
+        "correctAnswer": "Storing numbers, dates, or other values"
+      },
+      {
+        "id": 3,
+        "question": "Which of the following can't be done with client-side JavaScript?",
+        "options": [
+            "Validating a form",
+            "Sending a form's contents by email",
+            "Storing the form's contents to a database file on the server",
+            "None of the above"
+        ],
+        "correctAnswer": "Storing the form's contents to a database file on the server"
+      },
+      {
+        "id": 4,
+        "question": "Will I be known and loved?",
+        "options": [
+            "Is there one that I trust?",
+            "Starting to sober up",
+            "Has it been long enough?",
+            "Will I be known and loved?"
+        ],
+        "correctAnswer": "Is there one that I trust?"
+      }
+    ]
+  }

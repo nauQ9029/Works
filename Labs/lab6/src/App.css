@@ -1,0 +1,114 @@
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.quiz-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.question {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.options-container button {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.options-container button.selected {
+  background-color: #0056b3;
+  color: white;
+}
+
+.options-container button:hover {
+  background-color: #f1f1f1;
+}
+
+.question-navigation {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.question-navigation button {
+  padding: 10px 15px;
+  flex: none;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  transition: background-color 0.1s ease;
+}
+
+.quiz-navigation button {
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  gap: 10px;
+  background-color: #007BFF;
+  color: white;
+  transition: background-color 0.1s ease;
+}
+
+.quiz-navigation button:hover {
+  background-color: #0056b3;
+}
+
+.navigation-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}

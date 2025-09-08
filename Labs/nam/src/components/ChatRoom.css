@@ -1,0 +1,76 @@
+/* ChatRoom.css */
+
+.chatroom-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.breadcrumb-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.chat-box {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.message {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.message:last-child {
+  border-bottom: none;
+}
+
+.message strong {
+  color: #333;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.message-form {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.message-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message-button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,130 @@
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
+  background-color: #f3922b;
+}
+
+
+
+
+.row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:400px;
+}
+
+.footer{
+  background-color: #f1a074;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+}
+
+.Jumbotron {
+  padding:70px 30px 70px 30px;
+  margin:0px auto;
+  background: #f1e1d3 ;
+ 
+}
+
+address{
+  font-size:80%;
+  margin:0px;
+  color:#0f0f0f;
+}
+
+.navbar-dark {
+  background-color: #e4800de1;
+}
+
+
+.nav-item {
+  font-size: 12pt !important;
+  color: white;
+}
+.page-enter {
+  opacity: 0.01;
+  transform: translateX(-100%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 300ms ease-in;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.page-exit-active {
+  opacity: 0.01;
+  transform: translateX(100%);
+  transition: all 300ms ease-out;
+}
+
+.imgStyle {
+  height: 128;
+  width: 128
+}
+
+
+nav ul li { 
+  margin-left: 5px; /* if the nav is on the right */ 
+ 
+} 
+nav a {
+  color: #e97a3e;
+  
+}
+
+.btn-bg {
+  background-color: #f48f31 !important;
+
+}
+
+.modal-content {
+  background-color: #f0cdab  !important;
+  color:#f48f31
+}
+.card-img {
+  width: 50pt;
+  height: 220pt;
+}
+.card-title {
+  height: 50pt;
+}
+.title {
+  font-size: 32pt !important;
+  color: rgba(238, 142, 17, 0.874);
+ 
+}
+.image {
+  width: 300px;
+  height: 300px;
+}
+
+.full-width-carousel {
+  width: 100%;
+}
+
+.full-width-carousel .carousel {
+  width: 100%;
+}
+
+.full-width-carousel .carousel .slide {
+  width: 100%;
+}
+
+.full-width-carousel .carousel .slide img {
+  width: 100%;
+  height: 300pt;
+  object-fit: cover;
+}
+
+.button-corner-carousel__button--play-pause {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

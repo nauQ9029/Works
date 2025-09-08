@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Name</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo-fpt.jpg" width="50" height="30" alt="Company Logo" />
+        Company A
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <section class="text-center">
+      <div
+        id="jumbotronCarousel"
+        class="carousel slide"
+        data-ride="carousel"
+        data-interval="2000"
+      >
+        <!-- Added data-interval -->
+        <ol class="carousel-indicators">
+          <li
+            data-target="#jumbotronCarousel"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#jumbotronCarousel" data-slide-to="1"></li>
+          <li data-target="#jumbotronCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="img/best-graphics-cards-2020-top-gpus-for-every-budget_ekp7.jpg"
+              class="d-block w-100"
+              alt="First Slide"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Welcome to Company A</h1>
+              <p>
+                We provide top-notch services and products tailored to your
+                needs.
+              </p>
+              <a href="#contact" class="btn btn-danger">Learn More</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/gkrPzGSC3Yn9zTUAUvmGRe-1200-80.jpg"
+              class="d-block w-100"
+              alt="Second Slide"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Elevate Your Business</h1>
+              <p>
+                Our marketing solutions can take your brand to the next level.
+              </p>
+              <a href="#products" class="btn btn-light">See Our Products</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="img/amd-vs-nvidia-1657825719720.jpg"
+              class="d-block w-100"
+              alt="Third Slide"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Innovative Solutions</h1>
+              <p>We bring the latest trends and innovation to your business.</p>
+              <a href="#services" class="btn btn-info">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+      <div class="container">
+        <h2 class="text-center">Our Services</h2>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              src="img/geforce-ada-40-series-nv-sfg-295x166.jpg"
+              class="img-fluid w-100"
+              alt="Product 1"
+            />
+            <h4 class="text-center">GeForce RTX™ Graphics Cards</h4>
+            <p>
+              GeForce RTX graphics cards deliver the ultimate platform for
+              gamers and creators.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              src="img/geforce-ada-laptop-learn-more-nv-sfg-295x166-new.jpeg"
+              class="img-fluid w-100"
+              alt="Product 2"
+            />
+            <h4 class="text-center">GeForce RTX™ 40 Series Laptops</h4>
+            <p>The world’s fastest laptops for gamers and creators.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              src="img/geforce-ada-dlss-web-nv-sfg-295x166.jpg"
+              class="img-fluid w-100"
+              alt="Product 3"
+            />
+            <h4 class="text-center">DLSS 3</h4>
+            <p>Max FPS. Max Quality. Powered by AI.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              src="img/geforce-now-evens-4c25-D.jpg"
+              class="img-fluid w-100"
+              alt="Product 4"
+            />
+            <h4 class="text-center">GeForce NOW</h4>
+            <p>Experience RTX performance on any device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6 product-content text-left">
+            <h1>GeForce GTX 16 Series</h1>
+            <p class="lead">The Gaming Supercharger</p>
+            <p>
+              Experience the powerful graphics performance of the award-winning
+              NVIDIA Turing architecture with GeForce GTX 16 Series graphics
+              cards and laptops.
+            </p>
+
+            <h2 class="feature-title">Turing Shaders</h2>
+            <p class="feature-description">
+              Featuring concurrent execution of floating point and integer
+              operations, adaptive shading technology, and a new unified memory
+              architecture, Turing shaders enable greater performance on today’s
+              games. Get improved power efficiency over the previous generation
+              for a faster, cooler, and quieter gaming experience.
+            </p>
+          </div>
+          <div class="col-md-6 text-right product-visuals">
+            <img
+              src="img/72371_card_man_hinh_palit_gtx_1650_gp_4g_gddr6__8_.jpg"
+              alt="Product Image 1"
+            />
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6 product-content text-left">
+            <h1>GeForce RTX 20 Series</h1>
+            <p class="lead">
+              NVIDIA® GeForce® RTX 20 series graphics cards and laptops feature
+              dedicated ray tracing and AI cores to bring you powerful
+              performance and cutting-edge features.
+            </p>
+            <p>
+              RTX. It’s On. The Ultimate in Ray Tracing and AI NVIDIA RTX™ is
+              the most advanced platform for ray tracing and AI technologies
+              that are revolutionizing the ways we play and create. Over 500 top
+              games and applications use RTX to deliver realistic graphics,
+              incredibly fast performance, and new cutting-edge AI features like
+              DLSS. RTX. It's On.
+            </p>
+
+            <h2 class="feature-title">GeForce RTX 20 Series Laptops</h2>
+            <p class="feature-description">
+              GeForce RTX laptops are the ultimate gaming powerhouses with the
+              fastest performance and most realistic graphics, packed into thin
+              designs. Unleash the power of AI-powered DLSS and real-time ray
+              tracing on the most demanding games and creative projects.
+            </p>
+          </div>
+          <div class="col-md-6 text-right product-visuals">
+            <img src="img/rtx2070super.jpg" alt="Product Image 1" />
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6 product-content text-left">
+            <h1>GeForce RTX 30 Series</h1>
+            <p class="lead">The Ultimate Play</p>
+            <p>
+              GeForce RTX™ 30 Series GPUs deliver high performance for gamers
+              and creators. They’re powered by Ampere—NVIDIA’s 2nd gen RTX
+              architecture—with dedicated 2nd gen RT Cores and 3rd gen Tensor
+              Cores, and streaming multiprocessors for ray-traced graphics and
+              cutting-edge AI features.
+            </p>
+          </div>
+          <div class="col-md-6 text-right product-visuals">
+            <img src="img/250-3052-6.png" alt="Product Image 1" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center">Contact Us</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Contact Information</h4>
+            <p>Email: info@company.com</p>
+            <p>Phone: 123-456-7890</p>
+            <p>Address: 121 Mai Thuc Loan, Thuan Thanh, Thua Thien Hue</p>
+          </div>
+          <div class="col-md-6">
+            <h4>Send a Message</h4>
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="3"
+                  placeholder="Your Message"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-secondary text-white text-center py-3">
+      <p>&copy; 2024 Company A. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

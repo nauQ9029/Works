@@ -1,0 +1,31 @@
+/* Home.css */
+
+.home-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .enter-chatroom-button {
+    display: inline-block;
+    background-color: #f9f9f9; /* Màu nền nút */
+    color: orange;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  } 
+  .enter-chatroom-button:hover {
+    background-color: #ffffff; /* Màu nền khi hover */
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+  }
+  .enter-chatroom-button:active {
+    background-color: #ffffff; /* Màu nền khi nhấn */
+    transform: scale(0.95); /* Hiệu ứng thu nhỏ khi nhấn */
+  }
+  .home-carousel {
+    margin-top: 0; /* Loại bỏ khoảng cách phía trên */
+    padding-top: 0; /* Loại bỏ khoảng cách bên trong phía trên */
+  }

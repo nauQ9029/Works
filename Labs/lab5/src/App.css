@@ -1,0 +1,56 @@
+/* App.css */
+
+.app-header {
+  background-color: #c02828; /* Màu nền header */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  margin-bottom: 0; /* Loại bỏ khoảng cách dưới */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header-logo {
+
+    height: 50px; /* Chiều cao logo */
+    border-radius: 50%; /* Tạo bo tròn để logo có dạng hình tròn */
+    object-fit: cover; /* Đảm bảo logo không bị biến dạng */
+    margin-right: 20px;
+}
+
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 20px; /* Khoảng cách giữa các liên kết */
+}
+
+.header-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+.app-footer {
+  background-color: #c02828; /* Màu nền của footer */
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 16px;
+}

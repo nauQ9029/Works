@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .header {
+        background-color: #e9ecef; /* Light grey background */
+        padding: 40px;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      .grid-item {
+        background-color: #d3d3d3; /* Light grey background */
+        border: 1px solid #000; /* Black border */
+        padding: 10px;
+      }
+      .footer {
+        background-color: #dcd2d1; /* Light grey-pink background */
+        padding: 10px;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">Let's test the grid!</div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Grid Layout -->
+    <div class="container mb-4">
+      <div class="row">
+        <div class="col-6 grid-item">First col</div>
+        <div class="col-6 grid-item">Second col</div>
+      </div>
+      <div class="row">
+        <div class="col-4 grid-item">col</div>
+        <div class="col-4 grid-item">col</div>
+        <div class="col-4 grid-item">col</div>
+      </div>
+      <div class="row">
+        <div class="col-3 grid-item">col</div>
+        <div class="col-3 grid-item">col</div>
+        <div class="col-3 grid-item">col</div>
+        <div class="col-3 grid-item">col</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">Created by ABC!</div>
+  </body>
+</html>

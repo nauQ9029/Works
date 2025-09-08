@@ -1,0 +1,31 @@
+1 - Khai báo biến
+[Kiểu biến] [Tên biến] = '[Data]';
+
+2 - Comments
+// Example 1
+
+/**
+ * Example 2
+ */
+
+/*
+	Example 3
+*/
+
+- Uncomment sẽ làm cho JS bỏ qua phần được cmt đấy
+và ngược lại với comment.
+
+3 - Một số built-in function
+I/ Alert - Hiển thị ô thông báo
+	alert('[Data]');
+	alert([Tên biến])
+
+II/ Console - In ra thông tin trên console
+	console.log();
+	console.error();
+	console.warn();
+
+III/ Confirm - Hiện bảng thông báo bao gồm lựa chọn Y - N
+	confirm();
+
+IV/ Prompt - Hiện bảng thông báo yêu cầu user input data

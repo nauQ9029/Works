@@ -1,0 +1,29 @@
+{
+    "accounts": [
+      {
+        "accountId": "ACC67890",
+        "accountHolder": {
+          "firstName": "John", "lastName": "Doe", "dateOfBirth": "1985-06-15",
+          "address": {
+            "street": "456 Elm St", "city": "Townsville", "state": "Stateville", "zipcode": "67890"
+          },
+          "contact": {
+            "email": "john.doe@example.com", "phone": "+1234567890"
+          }
+        }
+      },
+      {
+        "accountId": "ACC67891",
+        "accountHolder": {
+          "firstName": "Jane", "lastName": "Smith", "dateOfBirth": "1990-08-25",
+          "address": {
+            "street": "789 Maple St", "city": "Villageville", "state": "Stateville", "zipcode": "34567"
+          },
+          "contact": {
+            "email": "jane.smith@example.com", "phone": "+0987654321"
+          }
+        }
+      }
+    ]
+  }
+  
