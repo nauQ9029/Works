@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Student List</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Loop through the students list -->
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.email}"></td>
+            <td th:text="${student.dob}"></td>
+            <td>
+                <!-- Delete Form -->
+                <form th:action="@{/api/v2/student/delete}" method="post" onsubmit="return confirm('Are you sure?')">
+                    <input type="hidden" name="_method" value="delete" />
+                    <input type="hidden" name="studentId" th:value="${student.id}" />
+                    <button type="submit">Delete</button>
+                </form>
+
+                <!-- Update Form -->
+                <form th:action="@{/api/v2/student/update}" method="post">
+                    <input type="hidden" name="_method" value="put" />
+                    <input type="hidden" name="studentId" th:value="${student.id}" />
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

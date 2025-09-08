@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Phép tính 02 số nguyên -->
+    <div class="container">
+        <h3>Phép tính 02 số nguyên</h3>
+        <input type="number" id="num1" placeholder="Nhập số 1">
+        <input type="number" id="num2" placeholder="Nhập số 2">
+        <br>
+        <button onclick="calculate('+')">Cộng</button>
+        <button onclick="calculate('-')">Trừ</button>
+        <button onclick="calculate('*')">Nhân</button>
+        <button onclick="calculate('/')">Chia</button>
+        <p id="result1"></p>
+    </div>
+
+    <!-- Phép tính 03 số nguyên với Radio Button -->
+    <div class="container">
+        <h3>Phép tính 03 số nguyên với Radio Button</h3>
+        <input type="number" id="a" placeholder="Nhập a">
+        <input type="number" id="b" placeholder="Nhập b">
+        <input type="number" id="c" placeholder="Nhập c">
+        <br>
+        <input type="radio" name="operation" value="+" checked> Cộng
+        <input type="radio" name="operation" value="-"> Trừ
+        <input type="radio" name="operation" value="*"> Nhân
+        <input type="radio" name="operation" value="/"> Chia
+        <br>
+        <button onclick="calculateRadio()">Kết quả</button>
+        <p id="result2"></p>
+    </div>
+
+    <!-- Giải phương trình -->
+    <div class="container">
+        <h3>Giải phương trình</h3>
+        <input type="radio" name="equation" value="1" checked onchange="toggleEquation()"> Bậc 1: ax + b = 0
+        <input type="radio" name="equation" value="2" onchange="toggleEquation()"> Bậc 2: ax² + bx + c = 0
+        <br>
+        <input type="number" id="eq_a" placeholder="Nhập a">
+        <input type="number" id="eq_b" placeholder="Nhập b">
+        <input type="number" id="eq_c" placeholder="Nhập c">
+        <br>
+        <button onclick="solveEquation()">Tính toán</button>
+        <p id="result3"></p>
+    </div>
+
+    <script>
+        // Phép tính 02 số nguyên
+        function calculate(operator) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Vui lòng nhập số hợp lệ!");
+                return;
+            }
+            let result;
+            switch (operator) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': result = num2 !== 0 ? num1 / num2 : "Không thể chia cho 0"; break;
+            }
+            document.getElementById("result1").innerText = "Kết quả: " + result;
+        }
+
+        // Phép tính 03 số nguyên với Radio Button
+        function calculateRadio() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+            let operation = document.querySelector('input[name="operation"]:checked').value;
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                alert("Vui lòng nhập số hợp lệ!");
+                return;
+            }
+
+            let result;
+            switch (operation) {
+                case '+': result = a + b + c; break;
+                case '-': result = a - b - c; break;
+                case '*': result = a * b * c; break;
+                case '/': result = (b !== 0 && c !== 0) ? a / b / c : "Không thể chia cho 0"; break;
+            }
+            document.getElementById("result2").innerText = "Kết quả: " + result;
+        }
+
+        // Toggle để chọn phương trình bậc nhất / bậc hai
+        function toggleEquation() {
+            let isQuadratic = document.querySelector('input[name="equation"]:checked').value === "2";
+            document.getElementById("eq_c").style.display = isQuadratic ? "inline-block" : "none";
+        }
+
+        // Giải phương trình
+        function solveEquation() {
+            let a = parseFloat(document.getElementById("eq_a").value);
+            let b = parseFloat(document.getElementById("eq_b").value);
+            let isQuadratic = document.querySelector('input[name="equation"]:checked').value === "2";
+            let c = isQuadratic ? parseFloat(document.getElementById("eq_c").value) : 0;
+            let result;
+
+            if (isNaN(a) || isNaN(b) || (isQuadratic && isNaN(c))) {
+                alert("Vui lòng nhập số hợp lệ!");
+                return;
+            }
+
+            if (!isQuadratic) {
+                result = a !== 0 ? `x = ${-b / a}` : "Không có nghiệm";
+            } else {
+                let delta = b * b - 4 * a * c;
+                if (delta < 0) result = "Phương trình vô nghiệm";
+                else if (delta === 0) result = `Nghiệm kép: x = ${-b / (2 * a)}`;
+                else result = `x1 = ${(-b + Math.sqrt(delta)) / (2 * a)}, x2 = ${(-b - Math.sqrt(delta)) / (2 * a)}`;
+            }
+            document.getElementById("result3").innerText = result;
+        }
+
+        toggleEquation(); // Để ẩn textbox [Nhập c] nếu chọn Bậc 1
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Employees</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Manage <strong>Employees</strong></h4>
+            <div>
+                <button class="btn btn-danger" id="deleteSelected"><i class="fas fa-trash"></i> Delete</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#employeeModal"><i class="fas fa-plus-circle"></i> Add New Employee</button>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" id="employeeTable">
+                <thead class="thead-dark">
+                <tr>
+                    <th><input type="checkbox" id="selectAll"></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <div>Page: <span id="currentPage">1</span> / <span id="totalPages">1</span></div>
+                <div>
+                    <button class="btn btn-sm btn-secondary" id="prevPage">Previous</button>
+                    <button class="btn btn-sm btn-secondary" id="nextPage">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="employeeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Employee</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="employeeForm">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="address" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" id="phone" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Employee</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    let employees = [
+        { name: "John Doe", email: "john@example.com", address: "123 Main St", phone: "123-456-7890" },
+        { name: "Jane Smith", email: "jane@example.com", address: "456 Oak St", phone: "987-654-3210" },
+        { name: "Alice Johnson", email: "alice@example.com", address: "789 Pine St", phone: "555-666-7777" },
+        { name: "Bob Williams", email: "bob@example.com", address: "321 Birch St", phone: "444-555-6666" },
+        { name: "John Doe", email: "john@example.com", address: "123 Main St", phone: "123-456-7890" },
+        { name: "Jane Smith", email: "jane@example.com", address: "456 Oak St", phone: "987-654-3210" },
+        { name: "Alice Johnson", email: "alice@example.com", address: "789 Pine St", phone: "555-666-7777" },
+        { name: "Bob Williams", email: "bob@example.com", address: "321 Birch St", phone: "444-555-6666" },
+        { name: "Charlie Brown", email: "charlie@example.com", address: "222 Cedar St", phone: "333-444-5555" }
+    ];
+
+    let currentPage = 1;
+    const rowsPerPage = 5;
+
+    function renderTable() {
+        $("#employeeTable tbody").empty();
+        let start = (currentPage - 1) * rowsPerPage;
+        let end = start + rowsPerPage;
+        let paginatedEmployees = employees.slice(start, end);
+
+        paginatedEmployees.forEach((emp, index) => {
+            let row = `
+                <tr>
+                    <td><input type="checkbox" class="rowCheckbox"></td>
+                    <td>${emp.name}</td>
+                    <td>${emp.email}</td>
+                    <td>${emp.address}</td>
+                    <td>${emp.phone}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm deleteRow" data-index="${start + index}"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+            `;
+            $("#employeeTable tbody").append(row);
+        });
+
+        updatePagination();
+    }
+
+    function updatePagination() {
+        let totalPages = Math.ceil(employees.length / rowsPerPage);
+        $("#totalPages").text(totalPages);
+        $("#currentPage").text(currentPage);
+
+        $("#prevPage").prop("disabled", currentPage === 1);
+        $("#nextPage").prop("disabled", currentPage === totalPages || employees.length === 0);
+    }
+
+    renderTable();
+
+    $("#employeeForm").submit(function (event) {
+        event.preventDefault();
+        let name = $("#name").val().trim();
+        let email = $("#email").val().trim();
+        let address = $("#address").val().trim();
+        let phone = $("#phone").val().trim();
+
+        if (name && email && address && phone) {
+            employees.push({ name, email, address, phone });
+            $("#employeeModal").modal("hide");
+            $("#employeeForm")[0].reset();
+            currentPage = Math.ceil(employees.length / rowsPerPage);
+            renderTable();
+        }
+    });
+
+    $(document).on("click", ".deleteRow", function () {
+        let index = $(this).data("index");
+        employees.splice(index, 1);
+        if (currentPage > Math.ceil(employees.length / rowsPerPage)) {
+            currentPage--;
+        }
+        renderTable();
+    });
+
+    $("#deleteSelected").click(function () {
+        employees = employees.filter((_, index) => {
+            return !$(`.rowCheckbox:eq(${index % rowsPerPage})`).prop("checked");
+        });
+        if (currentPage > Math.ceil(employees.length / rowsPerPage)) {
+            currentPage--;
+        }
+        renderTable();
+    });
+
+    $("#selectAll").click(function () {
+        $(".rowCheckbox").prop("checked", this.checked);
+    });
+
+    $("#prevPage").click(function () {
+        if (currentPage > 1) {
+            currentPage--;
+            renderTable();
+        }
+    });
+
+    $("#nextPage").click(function () {
+        let totalPages = Math.ceil(employees.length / rowsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderTable();
+        }
+    });
+});
+</script>
+</body>
+</html>

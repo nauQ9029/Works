@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Layout container */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Common */
+.header, .content, .signup {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+/* Background colours */
+.header {
+    background-color: #6495ED;
+}
+
+.content {
+    background-color: #D3D3D3;
+    color: black;
+}
+
+.signup {
+    background-color: #87CEFA;
+}
+
+/* Feature section */
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background-color: #FFA07A;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+/* 🖥 Desktop (>=1025px) */
+@media (min-width: 1025px) {
+    .features-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 cột ngang */
+    }
+    
+    .signup {
+        grid-column: span 3; /* SIGN UP chiếm cả hàng */
+        order: 3;
+    }
+
+    .content {
+        order: 4; /* Chuyển CONTENT xuống dưới */
+    }
+}
+
+/* 📲 Tablet (481px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 cột */
+    }
+
+    .signup {
+        grid-column: span 1;
+        text-align: center;
+        padding: 40px;
+        color: white;
+    }
+
+    .feature {
+        grid-column: span 1;
+    }
+}
+
+/* 📱 Mobile (<= 480px) */
+@media (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feature, .signup {
+        width: 100%;
+    }
+}

@@ -1,0 +1,55 @@
+package com.example.SpringBoot_FullExample;
+
+import java.time.LocalDate;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.example.SpringBoot_FullExample.student.Student;
+import com.example.SpringBoot_FullExample.student.StudentRepository;
+import com.example.SpringBoot_FullExample.student.StudentService;
+
+@SpringBootApplication
+public class SpringBootFullExampleApplication {
+
+//	public static void main(String[] args) {
+//		SpringApplication.run(SpringBootFullExampleApplication.class, args);
+//	}
+	
+	// Mock repository manually
+    StudentRepository studentRepository = new StudentRepository() {
+        @Override
+        public Optional<Student> findStudentByEmail(String email) {
+            // Simulating an existing student in the database
+            if (email.equals("existing@example.com")) {
+                return Optional.of(new Student("Existing User", "existing@example.com", LocalDate.of(2000, 1, 1)));
+            }
+            return Optional.empty();
+        }
+
+        @Override
+        public void save(Student student) {
+            System.out.println("Student " + student.getName() + " saved successfully!");
+        }
+    };
+
+    // Create StudentService instance
+    StudentService studentService = new StudentService(studentRepository);
+
+    // Test case: Adding a new student (should succeed)
+    try {
+        Student newStudent = new Student("John Doe", "john.doe@example.com", LocalDate.of(2000, 1, 1));
+        studentService.addNewStudent(newStudent);
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    }
+
+    // Test case: Adding an existing student (should fail)
+    try {
+        Student existingStudent = new Student("Existing User", "existing@example.com", LocalDate.of(2000, 1, 1));
+        studentService.addNewStudent(existingStudent);
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage()); // Expecting "Email already exists"
+    }
+}
+}

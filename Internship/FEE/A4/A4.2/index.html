@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="checkoutForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Personal Info</h3>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                            <small class="text-danger"></small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                            <small class="text-danger"></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <small class="text-danger"></small>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" id="phone" required>
+                            <small class="text-danger"></small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" id="address" required>
+                        <small class="text-danger"></small>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>City</label>
+                            <input type="text" class="form-control" id="city" required>
+                            <small class="text-danger"></small>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>State</label>
+                            <select class="form-control" id="state" required>
+                                <option value="">Choose...</option>
+                                <option value="NY">New York</option>
+                                <option value="CA">California</option>
+                            </select>
+                            <small class="text-danger"></small>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Zip Code</label>
+                            <input type="text" class="form-control" id="zipCode" required>
+                            <small class="text-danger"></small>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="checkMeOut" required>
+                        <label class="form-check-label">Check me out</label>
+                        <small class="text-danger d-block"></small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Payment Info</h3>
+                    <div class="form-group">
+                        <label>Name on Card</label>
+                        <input type="text" class="form-control" id="nameOnCard" required>
+                        <small class="text-danger"></small>
+                    </div>
+                    <div class="form-group">
+                        <label>Credit Card Number</label>
+                        <input type="text" class="form-control" id="creditCardNumber" required>
+                        <small class="text-danger"></small>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Exp Month</label>
+                            <input type="text" class="form-control" id="expMonth" required>
+                            <small class="text-danger"></small>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Exp Year</label>
+                            <input type="text" class="form-control" id="expYear" required>
+                            <small class="text-danger"></small>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>CVV</label>
+                            <input type="text" class="form-control" id="cvv" required>
+                            <small class="text-danger"></small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Accepted Cards</label>
+                        <div>
+                            <img src="images/visa.png" alt="Visa" width="50">
+                            <img src="images/mastercard.png" alt="MasterCard" width="50">
+                            <img src="images/discover.png" alt="Discover" width="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Sign in</button>
+        </form>
+    </div>
+</body>
+</html>

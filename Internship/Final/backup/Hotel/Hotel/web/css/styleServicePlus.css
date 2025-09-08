@@ -1,0 +1,226 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Apr 8, 2025, 9:46:48 PM
+    Author     : plmin
+*/
+
+.food-card {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.food-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.food-card-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    color: #dddddd;
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.food-card-overlay::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    z-index: -1;
+}
+
+/* ____________________ services_itemDetail.jsp ____________________ */
+
+.item-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px;
+    text-align: center;
+}
+
+.item-detail-container img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.item-detail-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.item-detail-container .price {
+    color: #28a745;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.item-detail-container .category {
+    /*    font-style: italic;*/
+    color: #6c757d;
+}
+
+.item-detail-container .description {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.order-form-wrapper {
+    margin-top: 20px;
+}
+
+.order-form-wrapper .input-group {
+    max-width: 180px;
+    margin: 0 auto 15px;
+}
+
+.order-form-wrapper .btn-primary {
+    background-color: #45a7b5;
+    border-color: #286169;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.order-form-wrapper .btn-primary:hover {
+    background-color: #183a3e;
+    border-color: #183a3e;
+}
+
+/* Hide arrows in input[type=number] for Chrome, Safari, Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide arrows in Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ____________________ services_cart.jsp ____________________ */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.cart-table thead {
+    background-color: #343a40;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cart-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.cart-total {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: right;
+    margin-top: 15px;
+    color: #28a745;
+}
+
+.cart-empty-message {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cart-back-link {
+    font-weight: 500;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.cart-back-link:hover {
+    text-decoration: underline;
+}
+
+.checkout-btn {
+    background-color: #45a7b5;
+    border-color: #286169;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #183a3e;
+}
+
+.cart-buttons {
+    gap: 20px;
+}
+
+.cart-btn {
+    min-width: 220px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 30px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.continue-btn {
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+}
+
+.continue-btn:hover {
+    background-color: #5a6268;
+    color: #fff;
+}
+
+.checkout-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+.checkout-btn:hover {
+    background-color: #218838;
+}
