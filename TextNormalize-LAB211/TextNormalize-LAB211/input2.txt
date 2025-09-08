@@ -1,0 +1,4 @@
+This  is a Simple text.
+It haS some spaces before and after punctuation  marks , like this .
+Quotes   may have irregular spacing:  "hello world" .
+Ensure a dot  At the end of this document .

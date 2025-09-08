@@ -1,0 +1,2 @@
+W      1      20      1100             UP           Danang             2004
+4      Nghia      20      2000             null           Danang             2004
