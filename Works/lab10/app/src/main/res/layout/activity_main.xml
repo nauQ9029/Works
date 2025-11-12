@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <!-- Import button -->
+    <ImageButton
+        android:id="@+id/btnImport"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:backgroundTint="#fff"
+        android:background="@drawable/rounded_button_bg"
+        android:src="@drawable/add"
+        android:contentDescription="Import Song"
+        android:padding="5dp"
+        android:elevation="8dp" />
+
+
+    <!-- Song list -->
+    <ListView
+        android:id="@+id/listViewSongs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/btnImport"
+        android:layout_above="@+id/controlLayout"
+        android:dividerHeight="1dp" />
+
+    <!-- Floating control bar -->
+    <LinearLayout
+        android:id="@+id/controlLayout"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#DDFFFFFF"
+        android:padding="8dp"
+        android:elevation="6dp">
+
+        <!-- Seek bar -->
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100" />
+
+        <!-- Image button row -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="4dp">
+
+            <ImageButton
+                android:id="@+id/btnPrev"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/prev"
+                android:contentDescription="Previous"
+                android:background="@android:color/transparent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:padding="2dp" />
+
+            <ImageButton
+                android:id="@+id/btnPlayPause"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/play"
+                android:contentDescription="Play or Pause"
+                android:background="@android:color/transparent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:padding="2dp" />
+
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/next"
+                android:contentDescription="Next"
+                android:background="@android:color/transparent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:padding="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Cats</string>
+
+    <string name="description_cat1">The Persian cat is a long-haired breed with a round face and short muzzle.</string>
+    <string name="description_cat2">The Siamese cat is one of the first distinctly recognized breeds of Asian cat.</string>
+    <string name="description_cat3">The Maine Coon is one of the largest domesticated breeds of cat, friendly and gentle.</string>
+    <string name="description_cat4">The Bengal cat is known for its wild appearance and leopard-like coat.</string>
+    <string name="description_cat5">The Sphynx cat is known for its lack of coat, wrinkled skin, and playful personality.</string>
+    <string name="description_cat6">The Sphynx cat is known for its lack of coat, wrinkled skin, and playful personality.</string>
+    <string name="description_cat7">The Sphynx cat is known for its lack of coat, wrinkled skin, and playful personality.</string>
+    <string name="description_cat8">The Sphynx cat is known for its lack of coat, wrinkled skin, and playful personality.</string>
+</resources>
