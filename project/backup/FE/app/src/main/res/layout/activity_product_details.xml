@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.ProductDetailsActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="6dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Big &amp; Small Fishes"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_search"
+            android:layout_marginEnd="12dp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_cart" />
+
+            <TextView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/bg_badge"
+                android:text="3"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:layout_gravity="top|end"
+                android:translationX="6dp"
+                android:translationY="-4dp"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Filter Buttons -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btnPopular"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Popular"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/pink"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Low Price"
+                style="@style/OutlinedButton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Small Fishes"
+                style="@style/OutlinedButton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Big Fishes"
+                style="@style/OutlinedButton"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Product Grid -->
+    <GridView
+        android:id="@+id/gridProducts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:verticalSpacing="16dp"
+        android:horizontalSpacing="12dp"
+        android:stretchMode="columnWidth"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"/>
+</LinearLayout>
