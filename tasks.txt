@@ -1,0 +1,32 @@
+1. điều phối:
+- nhân sự đáp ứng < 50%: Hiện tại vẫn cho điều phối (sai)
+- fix: cấm không cho điều phối luôn
+
+2. CreateMovingOrder:
+- map: hiện tại click trên biển vẫn cho ra địa chỉ (ảnh hưởng đến lat,lng đến bên điều phối)
+set map address pointer sao cho đưa ra địa chỉ hợp lý
+
+3. HĐ:
+Chỉnh lại cho nhìn có pháp lý hơn
+
+4. Thêm tuyến đường cấm
+
+5. Login:
+chỉnh lại css 2 button login with google & fb
+
+6. Keep in touch (Liên hệ với chúng tôi) ở homepage
+- Từ section này ở homepage, tách thành 1 component sử dụng chung
+- Sau đó gọi từ đó ra các trang cần dùng
+
+các trang hiện dang còn mock data: dashboard
+
+7. trang Admin:
+Set lại Tiếng Việt
+
+8. SurveySchedulingPage:
+Thêm modal confirm
+
+
+1. Dùng AI thì làm thế nào để xử lý hợp ký dữ liệu được đưa ra, lấy model nào ?
+2. AI model dùng data set gì, có những hạn chế gì ? như thế nào ?
+3. Nếu người dùng up ảnh và để AI xử lý, ví dụ đối với những tấm ảnh ko có chiều sâu như background hỏng, mờ, hay các hạn chế khác thu model AI nớ thì xử lý như nào ?

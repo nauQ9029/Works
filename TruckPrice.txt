@@ -1,0 +1,53 @@
+(1) thay thông báo lỗi thành thông báo không được hủy với 1 số trường hợp status request ticket ở Dashboard.jsx:85 
+PUT https://apneal-unforwardly-emmie.ngrok-free.dev/api/request-tickets/69ac6c1…/cancel 400 (Bad Request)
+Dashboard.jsx:93 
+Lỗi khi hủy ticket: AxiosError: Request failed with status code 400 at async onOk (Dashboard.jsx:85:1)
+
+DONE - (2) thêm tính khoảng cách giữa điểm chuyển đi và chuyển đến thông qua tuyến đường có ở leafletosm
+
+DONE - (3) sau khi khảo sát và báo giá cho khách, khách chấp nhận thì request ticket từ QUOTED nhảy luôn sang status CONVERTED (skip ACCEPTED - bug) 
+
+DONE ? - (4) sau khi thanh toán, trạng thái trong invoice vẫn chưa nhảy dcm
+
+DONE - (5) khi thanh toán, khi khách ấn hủy thanh toán, system vẫn nhận và nhảy invoice vào DB
+
+DONE - (6) xử lý logic tuyến đường cho xe tải chạy trong TP Đà Nẵng
+
+(1) thêm lưu ý lịch cho Khách phần chọn ngày giờ khảo sát
+
+DONE, need feedback - (2) đập xây lại UI điền khảo sát
+chỉnh lại phiếu nhập khảo sát  mục 4 của surveyor: chia ra 2 danh mục - chính và phụ
+- Danh mục đồ đạc chính: 
+	+ liệt kê cụ thể các đồ đạc chính, vật liệu
+	+ thêm nhiều cách ước lượng đồ vật (vd giường 1m8-2m, máy giặt 40m3, TV 36 inch, thể tích tủ lạnh,...)
+- Danh mục đồ đạc phụ (chén bát, đũa, đèn bàn, đồng hồ,...) 
+	+ cho phép chọn bằng icon (cũng có ước lượng SL, <10 , 25, 50 cái)
+- Đồ quan trọng (két sắt) cần được đánh dấu
+
+DONE - (3) Invoice validate
+Nếu invoice cho requestticketId này đã tồn tại xong DB -> không tạo thêm mà chỉ cập nhật status của invoice
+
+10/03/26
+DONE - (1) chỉnh lại cách tính giá
+- Hiện tại đang tính giá theo cách sau:
+	+ chỉ tính theo 1 giá trị cứng, xong từ đó nhân lên (basePrice, servicePrice, StaffFee, VehiceFee
+	+ Từ đó, tính giá trị cuối cùng của đơn hàng (total = price + tax):
+	+ Áp mã giảm giá lên total
+
+____________________________ CÔNG THỨC TÍNH TIỀN (11/03/26) ____________________________
+TỔNG TIỀN =
+  📦 Phí vận chuyển cơ bản    	← theo bậc km (0–5km: 500k, 5–10km: 700k, 10–20km: 1tr, >20km: 1tr + 20k/km)
++ 🚛 Phí xe                   	← giá xe (ví dụ: 700k cho 5km đầu) + (km vượt × giá/km thêm)
++ 👷 Phí nhân công             	← số người × giá/giờ/người × số giờ ước tính
++ 🛋️ Phí dịch vụ đồ vật       	← mỗi món đồ tính theo loại (TV: 50k, Tủ lạnh: 100k, Giường: 150k…)
++ đóng gói (nếu có) + tháo lắp (nếu có)
++ 🛣️ Phụ phí quãng đường      	← CHỈ áp dụng khi > 30km, tính phần vượt (tránh double-charge)
++ 🪜 Phụ phí địa hình          	← phí khiêng bộ vượt mét miễn phí + phí tầng lầu / thang máy
++ 🛡️ Phí bảo hiểm             	← giá trị khai báo × tỉ lệ, kẹp giữa [tối thiểu 50k, tối đa 5tr]
++ 💼 Phí quản lý               	← % trên subtotal (mặc định 5%)
+─────────────────────────────
+- 🎁 Khuyến mãi                	← trừ TRƯỚC THUẾ, chỉ áp dụng nếu subtotal ≥ mức tối thiểu đơn hàng
++ 💸 Thuế VAT                  	← tính trên (subtotal - khuyến mãi)
+─────────────────────────────
+= TỔNG (làm tròn đến 1,000đ)
+  (nếu tổng < phí sàn → lấy phí sàn)
