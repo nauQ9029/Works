@@ -1,0 +1,20 @@
+                   </div>
+               </div>
+               )}
+           </div>
+        )}
+      </div>
+    </div>
+  );
+};
+/* ─── main page ───────────────────────────────────────────── */
+const ViewMovingOrder = () => {
+  const location = useLocation();
+  const { user, isAuthenticated } = useUser();
+
+  const [tickets, setTickets] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [activeFilter, setActiveFilter] = useState("ALL");
+  const [isSurveyModalVisible, setIsSurveyModalVisible] = useState(false);
+  const [selectedSurvey, setSelectedSurvey] = useState(null);
+  const [selectedTicket, setSelectedTicket] = useState(null);
