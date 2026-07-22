@@ -1,0 +1,152 @@
+/* --- FOOTER STYLES --- */
+.landing-footer {
+  background-color: #1a2e22; /* Màu xanh đen đậm hơn màu thương hiệu một chút để làm nền */
+  color: #fff;
+  padding: 60px 0 20px 0; /* Tăng padding trên dưới cho thoáng */
+  font-size: 14px;
+}
+
+/* Container giới hạn độ rộng để không bị quá bè trên màn hình to */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- BRAND COLUMN --- */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  background: white;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.footer-brand-name {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-desc {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 300px;
+}
+
+/* --- SOCIAL BUTTONS --- */
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.social-btn:hover {
+  background: #44624A;
+  border-color: #44624A;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* --- HEADINGS --- */
+.footer-heading {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* Gạch chân nhỏ dưới heading cho đẹp */
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 30px;
+  height: 2px;
+  background-color: #44624A;
+}
+
+/* --- LINKS LIST --- */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  transform: translateX(5px); /* Hiệu ứng đẩy nhẹ sang phải */
+}
+
+/* --- CONTACT --- */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.contact-icon {
+  color: #8BA888; /* Màu xanh nhạt cho icon */
+  font-size: 16px;
+}
+
+/* --- FOOTER BOTTOM --- */
+.footer-bottom {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-legal a:hover {
+  color: #fff;
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .footer-heading {
+    margin-top: 20px;
+  }
+}

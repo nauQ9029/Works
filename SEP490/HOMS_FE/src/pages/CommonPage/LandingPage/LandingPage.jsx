@@ -1,0 +1,791 @@
+import React, { useState, useEffect } from 'react';
+import { Layout, Row, Col, Button, Form, Input, Select, Card, Rate, Space, Menu, Drawer, App, Avatar, Modal, InputNumber, message, Carousel, notification } from 'antd';
+import {
+    PhoneOutlined,
+    MailOutlined,
+    EnvironmentOutlined,
+    FacebookOutlined,
+    InstagramOutlined,
+    LinkedinOutlined,
+    TwitterOutlined,
+    ArrowRightOutlined,
+    CheckCircleOutlined,
+    ClockCircleOutlined,
+    SafetyOutlined,
+    TeamOutlined,
+    HomeOutlined,
+    ShoppingOutlined,
+    ShoppingCartOutlined,
+    MenuOutlined,
+    CloseOutlined,
+    UserOutlined,
+    TruckOutlined,
+    LeftOutlined,
+    RightOutlined
+} from '@ant-design/icons';
+import './LandingPage.css';
+import AppHeader from '../../../components/header/header';
+import AppFooter from '../../../components/footer/footer';
+import api from '../../../services/api'; // Dùng helper API call có sẵn
+import AIAssistant from '../../../components/AIAssistant/AIAssistant';
+
+const { Header, Content, Footer } = Layout;
+const { TextArea } = Input;
+const { Option } = Select;
+
+const DISTRICT_MAP = {
+    'HAI_CHAU': 'Hải Châu',
+    'THANH_KHE': 'Thanh Khê',
+    'SON_TRA': 'Sơn Trà',
+    'NGU_HANH_SON': 'Ngũ Hành Sơn',
+    'LIEN_CHIEU': 'Liên Chiểu',
+    'CAM_LE': 'Cẩm Lệ',
+    'HOA_VANG': 'Hòa Vang',
+};
+
+const formatDistrict = (val) => {
+    if (!val) return '';
+    const cleanVal = String(val).trim();
+    // Thử tìm trong MAP trước, nếu không có trả về nguyên gốc
+    return DISTRICT_MAP[cleanVal] || DISTRICT_MAP[cleanVal.toUpperCase().replace(/ /g, '_')] || cleanVal;
+};
+
+const CustomLeftArrow = ({ currentSlide, slideCount, className, style, onClick, ...props }) => (
+    <div className={`custom-carousel-arrow left-arrow ${className || ""}`} style={style} onClick={onClick}>
+        <LeftOutlined />
+    </div>
+);
+
+const CustomRightArrow = ({ currentSlide, slideCount, className, style, onClick, ...props }) => (
+    <div className={`custom-carousel-arrow right-arrow ${className || ""}`} style={style} onClick={onClick}>
+        <RightOutlined />
+    </div>
+);
+
+const LandingPage = () => {
+    const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+    const [contactForm] = Form.useForm();
+
+    const handleContactClick = () => {
+        document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const handleGetStarted = () => {
+        document.getElementById('hero-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const handleContactSubmit = async (values) => {
+        try {
+            await api.post('/public/contact', values);
+            message.success('Cảm ơn bạn đã để lại thông tin. Đội ngũ HOMS sẽ liên hệ với bạn trong thời gian sớm nhất!');
+            contactForm.resetFields();
+        } catch (error) {
+            console.error(error);
+            message.error('Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại sau.');
+        }
+    };
+
+    const [hoveredService, setHoveredService] = useState(null);
+    const [dbTestimonials, setDbTestimonials] = useState([]);
+
+    useEffect(() => {
+        let timer;
+        let timeout;
+        let isMounted = true;
+
+        const fetchRecentOrders = async () => {
+            try {
+                const res = await api.get('/public/recent-orders');
+                if (!isMounted) return; // Nếu đã rời trang trước khi có kết quả API thì hủy bỏ
+
+                if (res.data && res.data.success && res.data.data.length > 0) {
+                    const orders = res.data.data;
+                    let currentIndex = 0;
+
+                    // Hiện 1 cái đầu tiên sau 2 giây
+                    timeout = setTimeout(() => {
+                        if (!isMounted) return;
+                        showOrderNotification(orders[currentIndex]);
+                        currentIndex = (currentIndex + 1) % orders.length;
+
+                        // Lặp lại mỗi 12 giây
+                        timer = setInterval(() => {
+                            if (!isMounted) return;
+                            showOrderNotification(orders[currentIndex]);
+                            currentIndex = (currentIndex + 1) % orders.length;
+                        }, 12000);
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error("Lỗi fetch recent orders", error);
+            }
+        };
+
+        const showOrderNotification = (order) => {
+            const rawFrom = order.requestTicketId?.pickup?.district || '';
+            const rawTo = order.requestTicketId?.delivery?.district || '';
+            const from = formatDistrict(rawFrom);
+            const to = formatDistrict(rawTo);
+            const locationText = from && to ? ` từ ${from} đến ${to}` : '';
+
+            notification.info({
+                key: 'landing-recent-order',
+                message: <strong style={{ color: '#2D4F36', fontSize: '15px' }}>Tin vui từ HOMS!</strong>,
+                description: <span style={{ color: '#555' }}>Khách hàng <b>{order.customerId?.fullName || 'ẩn danh'}</b> vừa hoàn thành chuyến vận chuyển{locationText}.</span>,
+                placement: 'bottomLeft',
+                duration: 6,
+                icon: <CheckCircleOutlined style={{ color: '#8BA888', fontSize: '24px' }} />,
+                style: { borderRadius: '14px', border: '1px solid #E8EDEA', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }
+            });
+        };
+
+        fetchRecentOrders();
+
+        return () => {
+            isMounted = false;
+            if (timer) clearInterval(timer);
+            if (timeout) clearTimeout(timeout);
+            notification.destroy(); // Hủy MỌI notification khi rời khỏi trang LandingPage
+        };
+    }, []);
+
+    useEffect(() => {
+        const fetchRatings = async () => {
+            try {
+                const res = await api.get('/public/ratings?limit=10');
+                if (res.data && res.data.success) {
+                    setDbTestimonials(res.data.data);
+                }
+            } catch (err) {
+                console.error("Lỗi lấy đánh giá:", err);
+            }
+        };
+        fetchRatings();
+    }, []);
+
+    // IntersectionObserver cho hiệu ứng reveal khi cuộn
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        revealElements.forEach(el => observer.observe(el));
+
+        return () => {
+            revealElements.forEach(el => observer.unobserve(el));
+        };
+    }, []);
+
+    // States for Quick Estimate
+    const [estimateModalVisible, setEstimateModalVisible] = useState(false);
+    const [estimateLoading, setEstimateLoading] = useState(false);
+    const [estimateData, setEstimateData] = useState(null);
+    const [estDistance, setEstDistance] = useState(null);
+    const [estVehicle, setEstVehicle] = useState('500KG');
+
+    const handleQuickEstimate = async () => {
+        if (!estDistance || estDistance <= 0) {
+            message.warning("Vui lòng nhập khoảng cách (Km) hợp lệ!");
+            return;
+        }
+
+        setEstimateLoading(true);
+        try {
+            const res = await api.post('/public/estimate-price', {
+                distanceKm: Number(estDistance),
+                vehicleType: estVehicle
+            });
+
+            if (res.data && res.data.success) {
+                setEstimateData(res.data.data);
+                setEstimateModalVisible(true);
+            }
+        } catch (err) {
+            console.error(err);
+            message.error("Lỗi hệ thống khi dự tính giá. Vui lòng thử lại sau!");
+        } finally {
+            setEstimateLoading(false);
+        }
+    };
+
+    const menuItems = [
+        { label: 'Trang Chủ', key: 'home', onClick: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
+        { label: 'Dịch Vụ', key: 'services', onClick: () => document.getElementById('services-section').scrollIntoView({ behavior: 'smooth' }) },
+        { label: 'Quy Trình', key: 'process', onClick: () => document.getElementById('process-section').scrollIntoView({ behavior: 'smooth' }) },
+        { label: 'Đánh Giá', key: 'testimonials', onClick: () => document.getElementById('testimonials-section').scrollIntoView({ behavior: 'smooth' }) },
+    ];
+
+    const testimonialsData = [
+        {
+            id: 1,
+            name: 'Nguyễn Văn A',
+            text: 'Dịch vụ chuyên nhân, giá cả hợp lý. Đội ngũ rất tận tâm và chu đáo trong suốt quá trình chuyển.',
+            rating: 5,
+            service: 'Chuyển nhà trọn gói',
+            avatar: 'https://xsgames.co/randomusers/avatar.php?g=male' // Ảnh mẫu
+        },
+        {
+            id: 2,
+            name: 'Trần Thị B',
+            text: 'Nhanh chóng, an toàn và đúng giờ. Đồ đạc được vận chuyển không hề hư hỏng.',
+            rating: 5,
+            service: 'Chuyển văn phòng',
+            avatar: 'https://xsgames.co/randomusers/avatar.php?g=male' // Ảnh mẫu
+        },
+        {
+            id: 3,
+            name: 'Phạm Minh C',
+            text: 'Giá cả rất cạnh tranh, dịch vụ tuyệt vời. Tôi sẽ giới thiệu cho bạn bè và gia đình.',
+            rating: 5,
+            service: 'Chuyển đồ đạc',
+            avatar: 'https://xsgames.co/randomusers/avatar.php?g=male' // Ảnh mẫu
+        },
+    ];
+
+    const servicesData = [
+        {
+            id: 1,
+            icon: <HomeOutlined />,
+            title: 'Chuyển nhà trọn gói',
+            description: 'Giải pháp chuyển nhà toàn diện từ A-Z. Đội ngũ HOMS sẽ đảm nhận mọi công đoạn: khảo sát, đóng gói đồ đạc bằng vật liệu chuyên dụng, tháo lắp thiết bị điện tử/nội thất, vận chuyển và sắp xếp lại toàn bộ tại nhà mới. Giúp bạn tiết kiệm tối đa thời gian, công sức với quy trình chuẩn hóa và an toàn tuyệt đối.'
+        },
+        {
+            id: 3,
+            icon: <ShoppingCartOutlined />,
+            title: 'Chuyển đồ đạc',
+            description: 'Dịch vụ vận chuyển chuyên biệt dành cho các món đồ cồng kềnh, thiết bị có giá trị cao hoặc đồ đạc đơn lẻ. Bao gồm các khâu bọc lót, đóng gói tiêu chuẩn, bốc xếp cẩn thận và vận chuyển bằng phương tiện phù hợp, đảm bảo mọi tài sản được đưa đến tận nơi nguyên vẹn nhất.'
+        },
+        {
+            id: 4,
+            icon: <ShoppingOutlined />,
+            title: 'Thuê xe tải',
+            description: 'Dịch vụ cho thuê xe tải vận chuyển linh hoạt với đa dạng tải trọng, đáp ứng mọi quy mô chuyên chở. Đi kèm tài xế chuyên nghiệp, thông thạo đường xá và hỗ trợ tận tình trong việc sắp xếp hàng hóa lên xuống xe, đảm bảo lộ trình an toàn và đúng tiến độ cam kết.'
+        },
+    ];
+
+    const whyChooseUsData = [
+        {
+            id: 1,
+            icon: <SafetyOutlined />,
+            title: 'Bảo hiểm đồ đạc',
+            description: 'Toàn bộ tài sản được bảo hiểm 100% trong suốt quá trình vận chuyển. Chúng tôi cam kết đền bù thỏa đáng nếu xảy ra hư hỏng hoặc thất thoát.'
+        },
+        {
+            id: 2,
+            icon: <CheckCircleOutlined />,
+            title: 'Giá đảm bảo',
+            description: 'Hệ thống báo giá minh bạch, cố định ngay từ đầu. Tuyệt đối không phát sinh chi phí ẩn hay phụ phí ngoài hợp đồng, giúp bạn an tâm về ngân sách.'
+        },
+        {
+            id: 3,
+            icon: <ClockCircleOutlined />,
+            title: 'Đúng giờ',
+            description: 'Chúng tôi trân trọng thời gian của khách hàng. Đội ngũ luôn có mặt đúng giờ hẹn và hoàn thành vận chuyển theo đúng tiến độ đã cam kết.'
+        },
+        {
+            id: 4,
+            icon: <TeamOutlined />,
+            title: 'Đội ngũ chuyên nghiệp',
+            description: 'Nhân viên được đào tạo bài bản về kỹ thuật đóng gói, bốc xếp và thái độ phục vụ tận tâm, lịch sự, đảm bảo trải nghiệm tốt nhất.'
+        },
+    ];
+
+    const processData = [
+        {
+            id: 1,
+            number: '01',
+            title: 'Tiếp nhận',
+            description: 'Gọi hoặc đặt lịch trực tuyến',
+            details: 'Hệ thống ghi nhận yêu cầu qua Hotline hoặc Website 24/7. Chuyên viên sẽ liên hệ lại ngay để xác nhận thông tin cơ bản và tư vấn sơ bộ về dịch vụ.'
+        },
+        {
+            id: 2,
+            number: '02',
+            title: 'Khảo sát',
+            description: 'Đánh giá khối lượng và khoảng cách',
+            details: 'Khảo sát trực tiếp hoặc qua Video Call để đo đạc khối lượng đồ đạc, quãng đường di chuyển và các yếu tố địa hình, từ đó đưa ra báo giá chính xác nhất.'
+        },
+        {
+            id: 3,
+            number: '03',
+            title: 'Nghiệm thu',
+            description: 'Kiểm tra tài sản trước chuyển',
+            details: 'Tiến hành phân loại, đóng gói đồ đạc bằng vật liệu chuyên dụng và lập danh mục kiểm kê. Khách hàng kiểm tra tình trạng tài sản trước khi niêm phong vận chuyển.'
+        },
+        {
+            id: 4,
+            number: '04',
+            title: 'Triển khai',
+            description: 'Chuyển an toàn đến địa điểm mới',
+            details: 'Đội ngũ kỹ thuật bốc xếp lên xe tải chuyên dụng, vận chuyển đến nơi mới, lắp đặt và sắp xếp lại đồ đạc theo yêu cầu của gia chủ.'
+        },
+    ];
+
+    return (
+        <Layout className="landing-page">
+            {/* Header */}
+            <AppHeader className="landing-header" />
+
+            <Content className="landing-content">
+                {/* Modal Giá Mẫu */}
+                <Modal
+                    title="Báo Giá Ước Tính"
+                    visible={estimateModalVisible}
+                    onCancel={() => setEstimateModalVisible(false)}
+                    footer={[
+                        <Button key="close" type="primary" onClick={() => setEstimateModalVisible(false)} style={{ background: '#2D4F36' }}>
+                            Đã hiểu
+                        </Button>
+                    ]}
+                    centered
+                >
+                    {estimateData ? (
+                        <div style={{ padding: '10px 0' }}>
+                            <p><strong>Khoảng cách:</strong> {estimateData.distanceKm} Km</p>
+                            <p><strong>Loại xe đề xuất:</strong> {estimateData.vehicleType}</p>
+                            <hr style={{ margin: '15px 0', borderColor: '#eee', borderStyle: 'solid' }} />
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                                <span>Phí di chuyển:</span>
+                                <span>{estimateData.breakdown?.distanceCost?.toLocaleString('vi-VN')} đ</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                                <span>Phí thuê xe:</span>
+                                <span>{estimateData.breakdown?.vehicleCost?.toLocaleString('vi-VN')} đ</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                                <span>Cộng trước Thuế (Subtotal):</span>
+                                <span>{estimateData.breakdown?.subtotal?.toLocaleString('vi-VN')} đ</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <span>Thuế VAT (10%):</span>
+                                <span>{estimateData.breakdown?.tax?.toLocaleString('vi-VN')} đ</span>
+                            </div>
+                            <hr style={{ margin: '15px 0', borderColor: '#eee', borderStyle: 'solid' }} />
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <strong style={{ fontSize: '16px' }}>Tổng Cộng Tham Khảo:</strong>
+                                <strong style={{ fontSize: '20px', color: '#2D4F36' }}>{estimateData.estimatedTotal?.toLocaleString('vi-VN')} đ</strong>
+                            </div>
+                            <p style={{ marginTop: '20px', color: '#888', fontStyle: 'italic', fontSize: '13px' }}>* Lưu ý: Đây là mức giá ước tính dựa trên thuật toán tính khoảng cách vận chuyển. Mức giá thực tế sau khi khảo sát và đàm phán có thể thay đổi để tối ưu nhất cho quý khách.</p>
+                        </div>
+                    ) : (
+                        <p>Không có dữ liệu báo giá...</p>
+                    )}
+                </Modal>
+
+                {/* Hero Section */}
+                <section id="hero-section" className="hero-section">
+                    <div className="hero-overlay"></div>
+
+                    <div className="container" style={{ position: 'relative', zIndex: 2, height: '100%' }}>
+                        <Row align="middle" style={{ height: '100%' }}>
+                            <Col xs={24} md={22} lg={22} className="hero-text">
+
+                                <div className="hero-text-content">
+                                    <h1 className="hero-title">HOMS</h1>
+                                    <h2 className="hero-subtitle">
+                                        Chuyển nhà tận tâm,<br />
+                                        An tâm trọn vẹn.
+                                    </h2>
+                                    <p className="hero-description">
+                                        Dịch vụ chuyển nhà chuyên nghiệp với đội ngũ tận tâm, giá cạnh tranh và bảo hiểm toàn diện.
+                                    </p>
+                                </div>
+
+                                <div className="quick-quote-bar">
+                                    {/* Form báo giá nhanh UI */}
+                                    <Row gutter={[10, 10]} align="middle">
+
+                                        <Col xs={24} sm={7}>
+                                            <div className="input-group green-theme">
+                                                <div className="label-row">
+                                                    <EnvironmentOutlined className="label-icon" />
+                                                    <span className="input-label">Khoảng cách (Km)</span>
+                                                </div>
+                                                <InputNumber
+                                                    placeholder="VD: 5"
+                                                    min={1}
+                                                    style={{ width: '100%', height: '40px', borderRadius: '8px' }}
+                                                    value={estDistance}
+                                                    onChange={(val) => setEstDistance(val ? Number(val) : null)}
+                                                    className="custom-input-field"
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col xs={0} sm={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                            <div className="arrow-wrapper">
+                                                <ArrowRightOutlined />
+                                            </div>
+                                        </Col>
+
+                                        <Col xs={24} sm={7}>
+                                            <div className="input-group green-theme">
+                                                <div className="label-row">
+                                                    <TruckOutlined className="label-icon" />
+                                                    <span className="input-label">Loại xe tải đề xuất</span>
+                                                </div>
+                                                <Select
+                                                    value={estVehicle}
+                                                    onChange={(val) => setEstVehicle(val)}
+                                                    style={{ width: '100%', height: '40px' }}
+                                                    className="custom-select-field"
+                                                >
+                                                    <Option value="500KG">Xe 500 KG</Option>
+                                                    <Option value="1TON">Xe 1 Tấn</Option>
+                                                    <Option value="1.5TON">Xe 1.5 Tấn</Option>
+                                                    <Option value="2TON">Xe 2 Tấn</Option>
+                                                </Select>
+                                            </div>
+                                        </Col>
+
+                                        <Col xs={24} sm={8} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                            <Button
+                                                type="primary"
+                                                className="quote-btn-small shimmer-btn"
+                                                onClick={handleQuickEstimate}
+                                                loading={estimateLoading}
+                                                style={{ width: '100%', maxWidth: '200px' }}
+                                            >
+                                                Xem giá dự kiến
+                                            </Button>
+                                        </Col>
+                                    </Row>
+                                </div>
+                                <p className="price-disclaimer">
+                                    * Giá chỉ mang tính tham khảo, vui lòng liên hệ tư vấn!
+                                </p>
+                            </Col>
+                        </Row>
+                    </div>
+                </section>
+
+                {/* Services Section */}
+                <section id="services-section" className="services-section">
+                    <div className="section-container reveal">
+                        <div className="section-heading-group">
+                            <span className="section-badge">Dịch Vụ</span>
+                            <h2 className="section-title">Giải Pháp Chuyển Nhà Thông Minh</h2>
+                            <div className="section-divider"></div>
+                            <p className="section-subtitle">Đội ngũ chuyên nghiệp, giá cạnh tranh và bảo hiểm toàn diện cho mọi nhu cầu vận chuyển của bạn.</p>
+                        </div>
+
+                        <Row gutter={[24, 24]} className="services-row">
+                            {servicesData.map((service) => (
+                                <Col key={service.id} xs={24} sm={12} md={8} lg={8} className="service-col">
+                                    <div 
+                                        className="service-card-wrapper"
+                                        onMouseEnter={() => setHoveredService(service)}
+                                        onMouseLeave={() => setHoveredService(null)}
+                                    >
+                                        <Card
+                                            className="service-card"
+                                            hoverable
+                                            bodyStyle={{ padding: '32px 28px', textAlign: 'center' }}
+                                        >
+                                            <div className="service-icon-wrapper">
+                                                {service.icon}
+                                            </div>
+                                            <h3 className="service-title-text">{service.title}</h3>
+                                        </Card>
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
+
+                        <p style={{
+                            textAlign: 'center',
+                            color: '#8BA888',
+                            fontSize: '13px',
+                            marginTop: '8px',
+                            marginBottom: '0',
+                            letterSpacing: '0.3px',
+                            fontStyle: 'italic',
+                            opacity: 0.85
+                        }}>
+                            ✦ Di chuột vào thẻ để xem chi tiết dịch vụ
+                        </p>
+                        
+                        <div className="service-detail-container">
+                            <p className={`service-detail-text ${hoveredService ? 'show' : ''}`}>
+                                {hoveredService ? hoveredService.description : ''}
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Why Choose Us Section */}
+                <section className="why-choose-us-section">
+                    <div className="section-container reveal">
+                        <div className="section-heading-group">
+                            <span className="section-badge">Cam Kết</span>
+                            <h2 className="section-title">Tại Sao Chọn Chúng Tôi?</h2>
+                            <div className="section-divider"></div>
+                        </div>
+
+                        <Row gutter={[24, 24]}>
+                            {whyChooseUsData.map((item) => (
+                                <Col key={item.id} xs={24} sm={12} md={6}>
+                                    <div className="fold-card">
+                                        <div className="fold-card__icon-wrapper">
+                                            {item.icon}
+                                            <h3 className="fold-card__title-front">{item.title}</h3>
+                                        </div>
+                                        <div className="fold-card__content">
+                                            <p className="fold-card__title">{item.title}</p>
+                                            <p className="fold-card__description">{item.description}</p>
+                                        </div>
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
+
+                        <p style={{
+                            textAlign: 'center',
+                            color: '#8BA888',
+                            fontSize: '13px',
+                            marginTop: '8px',
+                            marginBottom: '0',
+                            letterSpacing: '0.3px',
+                            fontStyle: 'italic',
+                            opacity: 0.85
+                        }}>
+                            ✦ Di chuột vào thẻ để xem chi tiết cam kết
+                        </p>
+                    </div>
+                </section>
+
+                {/* Process Section */}
+                <section id="process-section" className="process-section">
+                    <div className="section-container reveal">
+                        <div className="section-heading-group">
+                            <span className="section-badge">Quy Trình</span>
+                            <h2 className="section-title">Các Bước Vận Chuyển</h2>
+                            <div className="section-divider"></div>
+                        </div>
+
+                        {/* Mảng màu nền cho 4 bước */}
+                        <div className="process-steps-container">
+                            {processData.map((step, index) => (
+                                <div key={step.id} className="process-step-item">
+                                    <div className="flip-card">
+                                        <div className="flip-card-inner">
+                                            <div className="flip-card-front">
+                                                <div className="flip-number">{step.number}</div>
+                                                <h3 className="flip-title">{step.title}</h3>
+                                                <p className="flip-description">{step.description}</p>
+                                                <span className="flip-cta">Xem chi tiết →</span>
+                                            </div>
+                                            <div className="flip-card-back">
+                                                <h3 className="flip-title-back">{step.title}</h3>
+                                                <p className="flip-details">{step.details}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {index < processData.length - 1 && <div className="process-connector"></div>}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Testimonials Section */}
+                <section id="testimonials-section" className="testimonials-section">
+                    <div className="section-container reveal">
+                        <div className="section-heading-group" style={{ marginBottom: '48px' }}>
+                            <span className="section-badge" style={{ background: 'rgba(255,255,255,0.18)', color: '#fff', border: '1px solid rgba(255,255,255,0.35)' }}>Khách Hàng Nói Gì</span>
+                            <h2 className="section-title section-title--white">Đánh Giá Từ Khách Hàng</h2>
+                            <div className="section-divider" style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.9))' }}></div>
+                        </div>
+
+                        <Carousel
+                            dots={false}
+                            arrows={true}
+                            prevArrow={<CustomLeftArrow />}
+                            nextArrow={<CustomRightArrow />}
+                            infinite={true}
+                            speed={500}
+                            slidesToShow={3}
+                            slidesToScroll={1}
+                            autoplay={true}
+                            autoplaySpeed={4000}
+                            responsive={[
+                                { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                                { breakpoint: 768, settings: { slidesToShow: 1 } }
+                            ]}
+                            className="feedback-carousel"
+                            style={{ paddingBottom: '30px' }}
+                        >
+                            {(dbTestimonials.length > 0 ? dbTestimonials.map(item => ({
+                                id: item._id,
+                                name: item.customerId?.fullName || 'Khách Hàng',
+                                text: item.comment || 'Dịch vụ rất tốt!',
+                                rating: item.rating,
+                                service: 'Dịch vụ vận chuyển',
+                                avatar: item.customerId?.avatar || 'https://xsgames.co/randomusers/avatar.php?g=pixel'
+                            })) : testimonialsData).map((testimonial) => (
+                                <div key={testimonial.id}>
+                                    <div style={{ margin: '0 12px' }}>
+                                        <Card
+                                            className="testimonial-card modern-testimonial-card"
+                                            bodyStyle={{ padding: 0 }}
+                                        >
+                                            <div className="modern-review-content">
+                                                <div className="quote-mark"></div>
+                                                <div className="review-rating">
+                                                    <Rate disabled value={testimonial.rating} />
+                                                </div>
+                                                <p className="review-text">
+                                                    {testimonial.text}
+                                                </p>
+                                            </div>
+
+                                            <div className="modern-testimonial-footer">
+                                                <Avatar
+                                                    size={54}
+                                                    src={testimonial.avatar}
+                                                    icon={<UserOutlined />}
+                                                    className="reviewer-avatar"
+                                                />
+                                                <div className="reviewer-info">
+                                                    <h4>{testimonial.name}</h4>
+                                                    <p>{testimonial.service}</p>
+                                                </div>
+                                            </div>
+                                        </Card>
+                                    </div>
+                                </div>
+                            ))}
+                        </Carousel>
+                    </div>
+                </section>
+
+                {/* Contact & Map Section */}
+                <section id="contact-section" className="contact-section">
+                    <div className="section-container reveal">
+                        {/* Wrapper tạo khung bo tròn chung */}
+                        <div className="contact-box-wrapper">
+                            <Row gutter={0} style={{ display: 'flex', flexWrap: 'wrap' }}>
+
+                                {/* --- CỘT TRÁI (FORM): Sửa thành 14 (58.33%) --- */}
+                                <Col xs={24} md={14} lg={14} className="contact-left">
+                                    <div className="contact-form-content">
+                                        {/* ... Nội dung Form giữ nguyên ... */}
+                                        <h2 style={{ color: '#2D4F36', marginBottom: '10px', fontSize: '28px', fontWeight: 'bold' }}>
+                                            Liên Hệ Với Chúng Tôi
+                                        </h2>
+                                        <p style={{ color: '#666', marginBottom: '30px' }}>
+                                            Để lại thông tin để được tư vấn gói dịch vụ phù hợp nhất.
+                                        </p>
+
+                                        <Form form={contactForm} layout="vertical" size="large" onFinish={handleContactSubmit}>
+                                            {/* ... Các trường Input giữ nguyên ... */}
+                                            <Row gutter={20}>
+                                                <Col xs={24} sm={12}>
+                                                    <Form.Item label="Họ tên" name="fullName" rules={[{ required: true, message: 'Vui lòng nhập họ tên!' }]}>
+                                                        <Input placeholder="Nhập họ tên của bạn" />
+                                                    </Form.Item>
+                                                </Col>
+                                                <Col xs={24} sm={12}>
+                                                    <Form.Item label="Số điện thoại" name="phone" rules={[{ required: true, message: 'Vui lòng nhập số điện thoại!' }]}>
+                                                        <Input placeholder="Nhập số điện thoại" />
+                                                    </Form.Item>
+                                                </Col>
+                                            </Row>
+
+                                            <Form.Item label="Email" name="email">
+                                                <Input type="email" placeholder="Nhập email của bạn" />
+                                            </Form.Item>
+
+                                            <Form.Item label="Vì sao bạn tìm đến chúng tôi?" name="source">
+                                                <Select placeholder="Chọn lý do...">
+                                                    <Option value="google">Tìm thấy trên Google</Option>
+                                                    <Option value="facebook">Biết qua Facebook/Tiktok</Option>
+                                                    <Option value="friend">Được bạn bè giới thiệu</Option>
+                                                    <Option value="ads">Thấy quảng cáo</Option>
+                                                    <Option value="other">Khác</Option>
+                                                </Select>
+                                            </Form.Item>
+
+                                            <Form.Item>
+                                                <button type="submit" className="fly-submit-btn shimmer-btn">
+                                                    <div className="svg-wrapper-1">
+                                                        <div className="svg-wrapper">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 24 24"
+                                                                width="24"
+                                                                height="24"
+                                                            >
+                                                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                                                <path
+                                                                    fill="currentColor"
+                                                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                                                ></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <span>Gửi Thông Tin</span>
+                                                </button>
+                                            </Form.Item>
+                                        </Form>
+
+                                        {/* ... Phần thông tin công ty giữ nguyên ... */}
+                                        <div className="company-contact-info">
+                                            <h4 style={{ color: '#2D4F36', marginBottom: '15px', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>
+                                                Thông Tin Liên Hệ Trực Tiếp
+                                            </h4>
+                                            <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+                                                <div className="info-item">
+                                                    <PhoneOutlined style={{ color: '#2D4F36', fontSize: '18px', marginRight: '10px' }} />
+                                                    <span style={{ color: '#555', fontWeight: '500' }}>Hotline: 1900 8888</span>
+                                                </div>
+                                                <div className="info-item">
+                                                    <MailOutlined style={{ color: '#2D4F36', fontSize: '18px', marginRight: '10px' }} />
+                                                    <span style={{ color: '#555', fontWeight: '500' }}>Email: homsmovinghouse@gmail.com</span>
+                                                </div>
+                                                <div className="info-item">
+                                                    <EnvironmentOutlined style={{ color: '#2D4F36', fontSize: '18px', marginRight: '10px' }} />
+                                                    <span style={{ color: '#555', fontWeight: '500' }}>Văn phòng: FPT University, Đà Nẵng</span>
+                                                </div>
+                                            </Space>
+                                        </div>
+                                    </div>
+                                </Col>
+
+                                {/* --- CỘT PHẢI (MAP): Sửa thành 10 (41.67%) --- */}
+                                <Col xs={24} md={10} lg={10} className="contact-right">
+                                    <div className="map-container">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.6!2d108.2598!3d15.9751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31420edf9f123abc%3A0xabcdef1234567890!2sFPT%20University%20Da%20Nang!5e0!3m2!1svi!2s!4v1700000000001!5m2!1svi!2s"
+                                            width="100%"
+                                            height="100%"
+                                            style={{ border: 0 }}
+                                            allowFullScreen=""
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            title="FPT University Danang Map"
+                                        ></iframe>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
+                </section>
+            </Content>
+
+            <AppFooter className="landing-footer" />
+            <AIAssistant />
+        </Layout>
+    );
+};
+
+export default React.memo(LandingPage);

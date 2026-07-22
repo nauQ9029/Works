@@ -1,0 +1,140 @@
+.about-page {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7f6;
+}
+
+/* HERO */
+.about-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url('../../../../public/images/moving-banner.png') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+/* INTRO */
+.about-intro {
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.about-intro h2 {
+    color: #2f5d3f;
+    margin-bottom: 20px;
+}
+
+.about-intro p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* VALUES */
+.about-values {
+    max-width: 1300px;
+    margin: 40px auto 80px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 16px;
+}
+
+.value-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid #e3e6e1;
+    width: calc(33.333% - 20px);
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.value-icon {
+    font-size: 48px;
+    color: #44624A;
+    margin-bottom: 24px;
+}
+
+.value-card h3 {
+    font-size: 24px;
+    color: #2D4F36;
+    margin-bottom: 16px;
+}
+
+/* MISSION */
+.about-mission {
+    background-color: #e9f2ec;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-mission h2 {
+    color: #2f5d3f;
+    margin-bottom: 20px;
+}
+
+.about-mission p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* CTA */
+.about-cta {
+    text-align: center;
+    padding: 80px 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.about-cta h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #2D4F36;
+    margin-bottom: 30px;
+}
+
+.about-cta button {
+    background-color: #44624A;
+    color: white;
+    padding: 0 48px;
+    height: 54px;
+    border: none;
+    border-radius: 27px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(68, 98, 74, 0.2);
+    transition: all 0.3s ease;
+}
+
+.about-cta button:hover {
+    background-color: #2D4F36;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(68, 98, 74, 0.3);
+}
+
+/* FOOTER */
+.about-footer {
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
